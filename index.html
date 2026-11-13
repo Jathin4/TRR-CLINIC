@@ -3,281 +3,337 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dr. Rama Reddy Clinics – Anaparthi</title>
-<meta name="description" content="Dr. Rama Reddy Clinics, Anaparthi – Specialist psychiatry and ENT outpatient clinic. Dr. Tetali Rama Reddy and Dr. Bobba Rachana. Call 91772 56111.">
+<title>Dr. Rama Reddy Clinics | Specialist Outpatient Care in Anaparthi</title>
+<meta name="description" content="Dr. Rama Reddy Clinics, Anaparthi – specialist outpatient psychiatry and ENT care by Dr. Tetali Rama Reddy and Dr. Bobba Rachana. Call 91772 56111.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #0f766e;
-    --primary-light: #8fd9c8;
-    --dark: #0b3b45;
-    --ink: #13282d;
-    --psych: #6d5bd0;
-    --psych-soft: #f1effc;
-    --ent: #0284c7;
-    --ent-soft: #e8f4fb;
-    --accent: #d9603b;
-    --mint: #d6efe8;
-    --soft: #f3f8f7;
-    --muted: #55666b;
-    --line: #d5e6e2;
-    --serif: "Instrument Serif", Georgia, serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --primary: #08613f;
+    --primary-dark: #064d32;
+    --ink: #1e2a23;
+    --muted: #526259;
+    --line: #dbe4db;
+    --green-soft: #eaf4e8;
+    --cream: #fff9f0;
+    --ent: #8f1d3f;
+    --ent-soft: #f6e9ea;
+    --serif: "DM Serif Display", Georgia, serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: "DM Sans", sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { font-family: "DM Sans", system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; letter-spacing: -.5px; }
-  h1 em, h2 em, h3 em { color: var(--primary); }
-  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
-  .mono { font-family: var(--mono); }
-  .eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); display: flex; align-items: center; gap: 12px; }
-  .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+  h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.1; }
+  h1 .g, h2 .g { color: var(--primary); }
+  .wrap { max-width: 1184px; margin: 0 auto; padding: 0 24px; }
   .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); }
+  .eyebrow::before { content: ""; width: 26px; height: 1.5px; background: currentColor; }
+  section { padding: 96px 0; }
+  .h2 { font-size: clamp(34px, 4.4vw, 48px); margin: 14px 0 20px; }
+  .lead { color: var(--muted); font-size: 17px; }
+  .ibox { width: 40px; height: 40px; border-radius: 10px; background: var(--green-soft); color: var(--primary); display: grid; place-items: center; flex-shrink: 0; }
 
-  /* Top bar */
-  .topbar { background: var(--dark); color: #dcefeb; font: 14px var(--mono); }
-  .topbar .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; padding-top: 9px; padding-bottom: 9px; }
-  .topbar span { display: flex; align-items: center; gap: 8px; }
-  .topbar b { color: #7ee8d6; font-weight: 500; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap; border: 1px solid transparent; cursor: pointer; font-family: inherit; transition: background .15s, box-shadow .15s; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-dark); }
+  .btn-light { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .btn-light:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+  .btn-sm { padding: 9px 16px; font-size: 14px; }
 
   /* Header */
-  header { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 3px solid var(--primary); }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; gap: 16px; }
-  .logo { display: flex; align-items: center; gap: 14px; }
-  .logo svg { width: 46px; height: 46px; flex-shrink: 0; }
-  .logo-text { font-family: var(--serif); font-size: 32px; color: var(--primary); line-height: 1; }
-  .logo-text small { display: block; font: 11px var(--mono); color: var(--muted); letter-spacing: 1.5px; margin-top: 6px; }
-  nav { display: flex; gap: 36px; font: 14px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--ink); }
+  header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo .ibox { width: 44px; height: 44px; }
+  .logo b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.1; white-space: nowrap; }
+  .logo small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 2px; color: var(--muted); white-space: nowrap; }
+  nav { display: flex; gap: 32px; color: var(--muted); font-weight: 500; }
   nav a:hover { color: var(--primary); }
-  .btn { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; padding: 15px 26px; border-radius: 40px; font-weight: 700; transition: transform .15s, box-shadow .15s; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(11,59,69,.18); }
-  .btn-primary { background: var(--primary); color: #fff; }
-  .btn-accent { background: var(--accent); color: #fff; }
-  .btn-outline { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
-  .logo-text { white-space: nowrap; }
-  @media (max-width: 1080px) { nav { gap: 24px; } }
-  @media (max-width: 960px) { nav { display: none; } .logo-text { font-size: 26px; } header .btn { padding: 12px 18px; } }
+  @media (max-width: 960px) { nav { display: none; } }
   @media (max-width: 560px) {
-    .logo { gap: 10px; }
-    .logo svg { width: 34px; height: 34px; }
-    .logo-text { font-size: 21px; white-space: nowrap; }
-    .logo-text small { font-size: 8.5px; letter-spacing: .3px; }
-    header .btn { padding: 0; width: 48px; height: 48px; justify-content: center; border-radius: 50%; }
-    header .btn .label { display: none; }
-    header .btn .icon { width: 22px; height: 22px; }
+    .wrap { padding: 0 16px; }
+    .logo .ibox { width: 38px; height: 38px; }
+    .logo b { font-size: 18px; }
+    .logo small { font-size: 9px; letter-spacing: 1.2px; }
+    header .btn .long { display: none; }
+    header .btn { padding: 10px 14px; gap: 6px; }
+    section { padding: 64px 0; }
+    section.hero { padding: 32px 0 48px; }
+  }
+
+  @media (max-width: 400px) {
+    header .wrap { gap: 10px; }
+    header .btn .icon { display: none; }
+    .logo { gap: 9px; }
+    .logo .ibox { width: 34px; height: 34px; }
+    .logo b { font-size: 16.5px; }
+    .logo small { font-size: 8px; letter-spacing: .6px; }
   }
 
   /* Hero */
-  .hero { background: radial-gradient(ellipse at 30% 10%, var(--mint) 0%, var(--soft) 50%, #fff 100%); padding: 56px 0 64px; overflow: hidden; }
-  .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
-  .hero-text { position: relative; padding-left: 56px; }
-  .hero-text .qm { position: absolute; left: -6px; top: -40px; font-family: var(--serif); font-size: 150px; line-height: 1; color: var(--primary-light); opacity: .8; }
-  .hero h1 { font-size: clamp(46px, 7vw, 82px); margin: 22px 0 26px; }
-  .hero h1 em { font-style: italic; }
-  .hero .lead { font-size: 20px; color: var(--muted); max-width: 460px; }
-  .care { display: inline-flex; align-items: center; gap: 12px; margin: 30px 0; padding: 14px 22px; background: var(--psych-soft); border-left: 4px solid var(--psych); font-family: var(--serif); font-size: 20px; color: var(--dark); }
-  .care em { color: var(--psych); }
-  .care .icon { width: 24px; height: 24px; }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-  .checks { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 26px; font: 14px var(--mono); color: var(--muted); }
-  .checks span { display: flex; align-items: center; gap: 8px; }
-  .checks .icon { color: var(--primary); }
-
-  .arch { position: relative; z-index: 0; justify-self: center; width: 380px; max-width: 100%; }
-  .arch-frame { position: relative; padding: 10px; border: 1px solid var(--primary-light); border-radius: 140px 140px 8px 8px; background: #fff; }
-  .arch-frame::before { content: ""; position: absolute; z-index: -1; inset: 60px -28px -28px 28px; background: var(--mint); border-radius: 140px 140px 8px 8px; }
-  /* frame follows the photo's own proportions: no cropping */
-  .arch-frame img { width: 100%; height: auto; border-radius: 130px 130px 4px 4px; }
-  .name-card { position: relative; margin: 44px 0 0; background: #fff; padding: 18px 26px; border-left: 4px solid var(--primary); box-shadow: 0 16px 40px rgba(11,59,69,.14); }
-  .name-card .eyebrow { font-size: 11px; }
-  .name-card .eyebrow::before { display: none; }
-  .name-card strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 4px 0 2px; }
-  .name-card span { font-size: 14px; color: var(--muted); }
-
+  .hero { padding: 72px 0 64px; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 40px; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .pill .icon { width: 15px; height: 15px; color: var(--primary); }
+  .hero h1 { font-size: clamp(48px, 7vw, 90px); margin: 22px 0 18px; }
+  .tagline { font-size: 19px; font-weight: 500; margin-bottom: 14px; }
+  .hero .lead { max-width: 480px; margin-bottom: 30px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .trust { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); font-weight: 500; }
+  .trust span { display: flex; align-items: center; gap: 8px; }
+  .trust .icon { color: var(--primary); }
+  .hero-media { position: relative; }
+  .hero-media img { width: 100%; aspect-ratio: 1 / 1.02; object-fit: cover; border-radius: 10px; }
+  .float { position: absolute; left: -36px; bottom: 34px; display: flex; align-items: center; gap: 14px; background: #fff; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(30,42,35,.12); }
+  .float .ibox { border-radius: 50%; }
+  .float b { display: block; font-size: 15px; font-weight: 600; }
+  .float span { font-size: 13px; color: var(--muted); }
+  .caption { text-align: right; font-size: 13px; color: var(--muted); margin-top: 14px; }
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: minmax(0, 1fr); }
-    .hero h1 { font-size: clamp(40px, 12vw, 64px); }
-    .hero-text { padding-left: 0; }
-    .hero-text .qm { display: none; }
-    .arch { width: 300px; margin-top: 20px; }
-    .arch-frame::before { inset: 50px -14px -14px 14px; }
+    .float { left: 12px; bottom: 12px; }
   }
 
-  /* Sections */
-  section { padding: 64px 0; }
-  .head { margin-bottom: 36px; display: grid; gap: 14px; }
-  .head h2 { font-size: clamp(38px, 5vw, 56px); }
-  .head p { color: var(--muted); max-width: 560px; font-size: 18px; }
-
   /* Strip */
-  .strip { background: var(--dark); color: #fff; padding: 34px 0; }
-  .strip .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .strip h2 { font-size: clamp(30px, 4vw, 44px); }
-  .strip h2 em { color: #7ee8d6; }
-  .strip .eyebrow { color: #7ee8d6; }
+  .strip { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .strip .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 28px; padding-top: 20px; padding-bottom: 20px; font-weight: 500; }
+  .strip span { display: flex; align-items: center; gap: 10px; }
+  .strip .icon { color: var(--primary); }
+
+  /* About */
+  .about .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .feature { display: flex; gap: 14px; padding: 26px 0; border-top: 1px solid var(--line); }
+  .feature b { display: block; font-weight: 600; margin-bottom: 6px; }
+  .feature p { color: var(--muted); font-size: 15px; }
+  @media (max-width: 860px) { .about .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
 
   /* Doctors */
-  .doctors { background: var(--soft); }
-  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
-  .doc { background: #fff; display: grid; grid-template-columns: 170px 1fr; gap: 26px; padding: 26px; border-left: 4px solid var(--psych); box-shadow: 0 12px 32px rgba(11,59,69,.07); }
-  .doc.ent { border-left-color: var(--ent); }
-  .doc img { width: 170px; height: 220px; object-fit: cover; object-position: top; border-radius: 90px 90px 4px 4px; background: var(--psych-soft); }
-  .doc.ent img { background: var(--ent-soft); }
-  .doc .eyebrow { color: var(--psych); font-size: 12px; }
-  .doc.ent .eyebrow { color: var(--ent); }
-  .doc .eyebrow::before { width: 20px; }
-  .doc h3 { font-size: 32px; margin: 8px 0 4px; }
-  .doc .deg { font: 13px var(--mono); color: var(--muted); }
-  .doc p { color: var(--muted); margin-top: 14px; font-size: 15px; }
-  @media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc img { width: 100%; height: 300px; border-radius: 150px 150px 4px 4px; } }
+  .doctors { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .split-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+  .split-head .h2 { max-width: 680px; margin-bottom: 0; }
+  .split-head p { max-width: 340px; color: var(--muted); }
+  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 24px; }
+  .doc { display: grid; grid-template-columns: 40% 1fr; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .doc-photo { position: relative; background: var(--green-soft); }
+  .doc.ent .doc-photo { background: var(--ent-soft); }
+  .doc-photo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; object-position: center top; }
+  .tag { position: absolute; left: 12px; bottom: 12px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+  .doc-body { padding: 30px 28px; }
+  .role { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); }
+  .doc.ent .role { color: var(--ent); }
+  .doc h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 10px 0 6px; }
+  .deg { color: var(--muted); font-size: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+  .doc p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+  @media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo img { height: 300px; } }
 
   /* Services */
-  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .svc-group { border-top: 4px solid var(--psych); background: var(--psych-soft); padding: 30px; }
-  .svc-group.ent { border-top-color: var(--ent); background: var(--ent-soft); }
-  .svc-group h3 { font-size: 34px; margin-bottom: 4px; }
-  .svc-group .eyebrow { color: var(--psych); font-size: 12px; margin-bottom: 18px; }
-  .svc-group.ent .eyebrow { color: var(--ent); }
-  .svc-group ul { list-style: none; }
-  .svc-group li { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(11,59,69,.1); font-size: 17px; font-weight: 500; }
-  .svc-group li:last-child { border-bottom: 0; }
-  .svc-group li .mono { font-size: 13px; color: var(--psych); }
-  .svc-group.ent li .mono { color: var(--ent); }
-  @media (max-width: 760px) { .svc-grid { grid-template-columns: 1fr; } }
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+  .svc { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .svc-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 26px 28px; background: var(--green-soft); }
+  .svc.ent .svc-head { background: var(--ent-soft); }
+  .svc-head small { font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--primary); }
+  .svc.ent .svc-head small, .svc.ent h3 { color: var(--ent); }
+  .svc h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; color: var(--primary); line-height: 1.2; margin-top: 4px; }
+  .svc-head .ibox { background: #fff; border: 1px solid var(--line); }
+  .svc.ent .svc-head .ibox { color: var(--ent); }
+  .svc ul { list-style: none; padding: 10px 28px 0; }
+  .svc li { display: flex; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .svc li:last-child { border-bottom: 0; }
+  .svc li .icon { color: var(--primary); width: 16px; height: 16px; }
+  .svc.ent li .icon { color: var(--ent); }
+  .svc .btn { margin: 8px 28px 28px; }
+  .btn-ent { background: #fff; color: var(--ent); border-color: #e3c4cb; }
+  .btn-ent:hover { background: var(--ent-soft); }
+  @media (max-width: 860px) { .svc-grid { grid-template-columns: 1fr; } }
 
-  /* Appointment */
-  .appt { background: linear-gradient(135deg, var(--primary), var(--dark)); color: #fff; text-align: center; }
-  .appt .eyebrow { color: #7ee8d6; justify-content: center; }
-  .appt h2 { font-size: clamp(38px, 5vw, 56px); margin: 14px 0; }
-  .appt h2 em { color: #7ee8d6; }
-  .appt .note { display: inline-block; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); font: 13px var(--mono); letter-spacing: 1px; text-transform: uppercase; padding: 8px 20px; border-radius: 30px; }
-  .appt .phone { display: block; font-family: var(--serif); font-size: clamp(56px, 11vw, 104px); line-height: 1; margin: 22px 0 30px; }
-  .appt-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .appt .btn-outline { background: transparent; color: #fff; border-color: #fff; }
+  /* Why */
+  .why { background: var(--primary); color: #fff; }
+  .why .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
+  .why .eyebrow { color: #cfe6d9; }
+  .why p { color: #d7e9de; }
+  .why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .why-list span { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.18); font-weight: 500; }
+  .why-list .icon { color: #a9dcc0; }
+  @media (max-width: 860px) { .why .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+  @media (max-width: 560px) { .why-list { grid-template-columns: 1fr; } }
 
-  /* Contact */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; align-items: stretch; }
-  .info { background: var(--soft); padding: 32px; border-left: 4px solid var(--primary); }
-  .info div { margin-bottom: 22px; }
-  .info div:last-child { margin-bottom: 0; }
-  .info .eyebrow { font-size: 12px; margin-bottom: 6px; }
-  .info .eyebrow::before { width: 20px; }
-  .info a { color: var(--accent); font-weight: 700; }
-  .map { overflow: hidden; min-height: 320px; box-shadow: 0 12px 32px rgba(11,59,69,.08); }
-  .map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
-  @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+  /* Enquiry */
+  .enquiry { background: var(--cream); border-bottom: 1px solid var(--line); }
+  .enquiry .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; }
+  .enquiry .left { padding-right: 56px; border-right: 1px solid var(--line); }
+  .enquiry .right { padding-left: 56px; }
+  .contact-items { margin: 30px 0 24px; padding-top: 30px; border-top: 1px solid var(--line); display: grid; gap: 18px; }
+  .ci { display: flex; align-items: center; gap: 14px; }
+  .ci .ibox { width: 44px; height: 44px; }
+  .ci small { display: block; color: var(--muted); font-size: 13px; }
+  .ci b { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+  form h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; }
+  form > p { color: var(--muted); margin: 4px 0 20px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 18px; }
+  label span { font-weight: 400; color: var(--muted); }
+  input, select, textarea { display: block; width: 100%; margin-top: 7px; padding: 12px 14px; font: inherit; font-size: 15px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+  textarea { min-height: 110px; resize: vertical; }
+  .submit-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .submit-row small { color: var(--muted); max-width: 270px; }
+  @media (max-width: 860px) {
+    .enquiry .wrap { grid-template-columns: minmax(0, 1fr); }
+    .enquiry .left { padding: 0 0 40px; border-right: 0; border-bottom: 1px solid var(--line); }
+    .enquiry .right { padding: 40px 0 0; }
+  }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr; gap: 0; } }
 
-  footer { background: var(--dark); color: #cfe3df; padding: 24px 0; font: 13px var(--mono); }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  footer b { color: #7ee8d6; font-weight: 500; }
+  /* Visit */
+  .visit-top { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+  .vi { display: flex; gap: 12px; }
+  .vi .icon { color: var(--primary); margin-top: 3px; }
+  .vi b { display: block; font-weight: 600; }
+  .vi p { color: var(--muted); font-size: 14.5px; }
+  .vi a.more { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; color: var(--primary); font-weight: 600; font-size: 14px; }
+  .visit-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .visit-bottom > a:first-child { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--primary); }
+  @media (max-width: 860px) { .visit-top { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
+  @media (max-width: 560px) { .visit-grid { grid-template-columns: 1fr; } }
 
-  .wa-float { position: fixed; right: 20px; bottom: 20px; width: 64px; height: 64px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 8px 22px rgba(0,0,0,.22); z-index: 20; }
-  .wa-float .icon { width: 30px; height: 30px; }
+  /* Footer */
+  footer { background: var(--primary); color: #fff; padding: 48px 0 28px; }
+  .f-top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); }
+  footer .logo .ibox { background: rgba(255,255,255,.12); color: #fff; }
+  footer .logo small { color: #cfe6d9; }
+  footer p { color: #d7e9de; max-width: 360px; margin-top: 14px; font-size: 15px; }
+  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6f2eb; font-size: 15px; }
+  .f-nav a:hover { color: #fff; text-decoration: underline; }
+  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe6d9; }
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M11 2v2M5 2v2M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M9.9 15.5a2 2 0 0 0-1.4-1.4l-6.1-1.6a.5.5 0 0 1 0-1L8.5 9.9a2 2 0 0 0 1.4-1.4l1.6-6.1a.5.5 0 0 1 1 0l1.6 6.1a2 2 0 0 0 1.4 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6a2 2 0 0 0-1.4 1.4l-1.6 6.1a.5.5 0 0 1-1 0z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-ccheck" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/><path d="M3 12h4l2-3 3 6 2-3h7"/></symbol>
-  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
 </svg>
-
-<div class="topbar">
-  <div class="wrap">
-    <span><svg class="icon"><use href="#i-pin"/></svg>Narayya Well Street, Anaparthi</span>
-    <span>Appointments: <b>91772 56111</b></span>
-  </div>
-</div>
 
 <header>
   <div class="wrap">
     <a href="#" class="logo" aria-label="Dr. Rama Reddy Clinics home">
-      <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="#0f766e" stroke-width="1.6">
-        <circle cx="24" cy="24" r="21"/>
-        <path d="M8 40 40 8"/>
-        <path d="M24 13c1 6 3 9 9 11-6 2-8 5-9 11-1-6-3-9-9-11 6-2 8-5 9-11z" fill="#0f766e"/>
-      </svg>
-      <span class="logo-text">Dr. Rama Reddy Clinics<small>REGD NO. : APMCFMR/95318</small></span>
+      <span class="ibox"><svg class="icon"><use href="#i-leaf"/></svg></span>
+      <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
     </a>
     <nav>
-      <a href="#doctors">Doctors</a>
+      <a href="#about">About</a>
+      <a href="#doctors">Our doctors</a>
       <a href="#services">Services</a>
-      <a href="#appointment">Appointment</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="tel:+919177256111" class="btn btn-primary" aria-label="Call now"><svg class="icon"><use href="#i-phone"/></svg><span class="label">Call now</span></a>
+    <a href="#contact" class="btn btn-primary" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-text">
-      <div class="qm" aria-hidden="true">“</div>
-      <div class="eyebrow">The quiet confidence of better care</div>
-      <h1>Mental wellbeing is the <em>true light</em> within us.</h1>
-      <p class="lead">Specialist psychiatry and ENT care, held in one calm, considered place in Anaparthi.</p>
-      <div class="care"><svg class="icon"><use href="#i-heart"/></svg><span>Your mental health matters… <em>we care</em> ♡</span></div>
-      <div class="hero-actions">
-        <a href="#appointment" class="btn btn-accent">Book an appointment <svg class="icon"><use href="#i-arrow"/></svg></a>
-        <a href="#services" class="btn btn-outline">Explore services</a>
+    <div>
+      <span class="pill"><svg class="icon"><use href="#i-pin"/></svg>Specialist care in Anaparthi, Andhra Pradesh</span>
+      <h1>Your health,<br><span class="g">our priority.</span></h1>
+      <p class="tagline">Compassionate Care. Expert Doctors. Better Living.</p>
+      <p class="lead">Thoughtful outpatient care for mental well-being and ear, nose and throat health, with experienced specialist doctors in one welcoming clinic.</p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-primary"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
+        <a href="#services" class="btn btn-light">Explore services<svg class="icon"><use href="#i-down"/></svg></a>
       </div>
-      <div class="checks">
-        <span><svg class="icon"><use href="#i-check"/></svg>Appointment-led care</span>
-        <span><svg class="icon"><use href="#i-check"/></svg>Two specialties, one clinic</span>
+      <div class="trust">
+        <span><svg class="icon"><use href="#i-shield"/></svg>Specialist-led care</span>
+        <span><svg class="icon"><use href="#i-heart"/></svg>Care with compassion</span>
       </div>
     </div>
-    <div class="arch">
-      <div class="arch-frame">
-        <img src="images/dr-rama-reddy.jpg" alt="Dr. Tetali Rama Reddy, Consultant Psychiatrist">
+    <div class="hero-media">
+      <img src="images/clinic-room.jpg" alt="Calm consultation room with chairs and a desk">
+      <div class="float">
+        <span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span>
+        <div><b>Care that sees the whole you</b><span>Psychiatry &amp; ENT consultations</span></div>
       </div>
-      <div class="name-card">
-        <div class="eyebrow">Founding physician</div>
-        <strong>Dr. Tetali Rama Reddy</strong>
-        <span>M.B.B.S., M.D., D.C.P. · Psychiatrist</span>
-      </div>
+      <p class="caption">A welcoming setting for your consultation.</p>
     </div>
   </div>
 </section>
 
 <div class="strip">
   <div class="wrap">
-    <h2>Dr. Rama Reddy Clinics — <em>Specialist Outpatient Clinic</em></h2>
-    <div class="eyebrow">Psychiatry · ENT</div>
+    <span><svg class="icon"><use href="#i-steth"/></svg>Experienced specialists</span>
+    <span><svg class="icon"><use href="#i-heart"/></svg>Patient-centred approach</span>
+    <span><svg class="icon"><use href="#i-pin"/></svg>Anaparthi, Andhra Pradesh</span>
   </div>
 </div>
 
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Welcome to Dr. Rama Reddy Clinics</div>
+      <h2 class="h2">Specialist care, with <span class="g">you at the centre.</span></h2>
+      <p class="lead">Dr. Rama Reddy Clinics is a specialist outpatient clinic providing psychiatric and ENT healthcare in Anaparthi. We believe good care starts with listening — and grows through thoughtful, individual attention.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span><div><b>Care shaped around you</b><p>Thoughtful attention that considers your individual needs and well-being.</p></div></div>
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-steth"/></svg></span><div><b>Experienced specialists</b><p>Meet the psychiatry and ENT specialists caring for the people of Anaparthi.</p></div></div>
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-spark"/></svg></span><div><b>A comfortable setting</b><p>A welcoming outpatient clinic for unhurried, professional consultations.</p></div></div>
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span><div><b>Whole-person well-being</b><p>A focus on both mental health and ear, nose and throat care.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="doctors" id="doctors">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Our doctors</div>
-      <h2>Meet the <em>specialists</em></h2>
+    <div class="eyebrow">Meet your doctors</div>
+    <div class="split-head">
+      <h2 class="h2">Specialist knowledge. <span class="g">Personal care.</span></h2>
+      <p>Two specialist practices, dedicated to your mental and physical well-being.</p>
     </div>
     <div class="doc-grid">
       <div class="doc">
-        <img src="images/dr-rama-reddy.jpg" alt="Dr. Tetali Rama Reddy">
-        <div>
-          <div class="eyebrow">Consultant Psychiatrist</div>
+        <div class="doc-photo">
+          <img src="images/dr-rama-reddy.jpg" alt="Dr. Tetali Rama Reddy">
+          <span class="tag">Psychiatry</span>
+        </div>
+        <div class="doc-body">
+          <div class="role">Consultant Psychiatrist</div>
           <h3>Dr. Tetali Rama Reddy</h3>
           <div class="deg">MBBS, MD (Psychiatry), D.C.P.</div>
-          <p>Founder of Dr. Rama Reddy Clinics. Compassionate, evidence-based care for mental health, from evaluation and counselling to de-addiction and long-term follow-up.</p>
+          <p>Founder of the clinic. Specialist outpatient care for mental health and personal well-being.</p>
+          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Request a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
       <div class="doc ent">
-        <img src="images/dr-rachana.jpg" alt="Dr. Bobba Rachana">
-        <div>
-          <div class="eyebrow">ENT, Head &amp; Neck Surgeon</div>
+        <div class="doc-photo">
+          <img src="images/dr-rachana.jpg" alt="Dr. Bobba Rachana">
+          <span class="tag">ENT</span>
+        </div>
+        <div class="doc-body">
+          <div class="role">ENT, Head &amp; Neck Surgeon</div>
           <h3>Dr. Bobba Rachana</h3>
           <div class="deg">MBBS, MS (ENT)</div>
-          <p>Expert diagnosis and treatment of ear, nose and throat conditions, with in-clinic endoscopic evaluation.</p>
+          <p>Specialist outpatient care for ear, nose, throat and head and neck health.</p>
+          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Request a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
     </div>
@@ -286,86 +342,162 @@
 
 <section id="services">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">What we offer</div>
-      <h2>Our <em>services</em></h2>
-    </div>
+    <div class="eyebrow">Our services</div>
+    <h2 class="h2">The right specialist, <span class="g">close to home.</span></h2>
+    <p class="lead">Consultations and specialist services across two dedicated outpatient practices.</p>
     <div class="svc-grid">
-      <div class="svc-group">
-        <h3>Psychiatry</h3>
-        <div class="eyebrow">Dr. Tetali Rama Reddy</div>
+      <div class="svc">
+        <div class="svc-head">
+          <div><small>Thoughtful mind care</small><h3>Psychiatry</h3></div>
+          <span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span>
+        </div>
         <ul>
-          <li><span class="mono">01</span>Mental Health Evaluation &amp; Treatment</li>
-          <li><span class="mono">02</span>Psychotherapy &amp; Counselling</li>
-          <li><span class="mono">03</span>Medical Management</li>
-          <li><span class="mono">04</span>De-addiction</li>
-          <li><span class="mono">05</span>Follow-up &amp; Continuity Care</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Mental Health Evaluation &amp; Treatment</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Psychotherapy &amp; Counselling</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Medical Management</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>De-addiction</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Follow-up &amp; Continuity Care</li>
         </ul>
+        <a href="#contact" class="btn btn-primary btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Ask about psychiatry<svg class="icon"><use href="#i-right"/></svg></a>
       </div>
-      <div class="svc-group ent">
-        <h3>ENT</h3>
-        <div class="eyebrow">Dr. Bobba Rachana</div>
+      <div class="svc ent">
+        <div class="svc-head">
+          <div><small>Specialist ENT care</small><h3>ENT</h3></div>
+          <span class="ibox"><svg class="icon"><use href="#i-ear"/></svg></span>
+        </div>
         <ul>
-          <li><span class="mono">01</span>Nasal Endoscopy</li>
-          <li><span class="mono">02</span>Otoendoscopy</li>
-          <li><span class="mono">03</span>Throat &amp; Voice Evaluation</li>
-          <li><span class="mono">04</span>Diagnostic Laryngoscopy</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Nasal Endoscopy</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Otoendoscopy</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Throat &amp; Voice Evaluation</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Diagnostic Laryngoscopy</li>
         </ul>
+        <a href="#contact" class="btn btn-ent btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Ask about ENT care<svg class="icon"><use href="#i-right"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="appt" id="appointment">
+<section class="why">
   <div class="wrap">
-    <div class="eyebrow">Appointments</div>
-    <h2>Book your <em>visit</em></h2>
-    <span class="note">Prior appointment is necessary</span>
-    <a href="tel:+919177256111" class="phone">91772 56111</a>
-    <div class="appt-actions">
-      <a href="tel:+919177256111" class="btn btn-accent"><svg class="icon"><use href="#i-phone"/></svg>Call to book</a>
-      <a href="https://wa.me/919177256111?text=Hello%20Dr.%20Rama%20Reddy%20Clinics%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp us</a>
+    <div>
+      <div class="eyebrow">Why patients choose us</div>
+      <h2 class="h2">Care is more than a consultation.</h2>
+      <p>We value clear guidance, thoughtful treatment and care that continues beyond your first visit.</p>
+    </div>
+    <div class="why-list">
+      <span><svg class="icon"><use href="#i-ccheck"/></svg>Specialist Medical Consultation</span>
+      <span><svg class="icon"><use href="#i-ccheck"/></svg>Patient-Centred Approach</span>
+      <span><svg class="icon"><use href="#i-ccheck"/></svg>Personalised Treatment</span>
+      <span><svg class="icon"><use href="#i-ccheck"/></svg>Professional Healthcare</span>
+      <span><svg class="icon"><use href="#i-ccheck"/></svg>Follow-up &amp; Continuity of Care</span>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section class="enquiry" id="contact">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Find us</div>
-      <h2>Visit <em>us</em></h2>
+    <div class="left">
+      <div class="eyebrow">Let's talk about your care</div>
+      <h2 class="h2">Your health deserves <span class="g">expert attention.</span></h2>
+      <p class="lead">Prior appointment is necessary. Please call us to speak with the clinic and arrange your visit.</p>
+      <div class="contact-items">
+        <a class="ci" href="tel:+919177256111">
+          <span class="ibox"><svg class="icon"><use href="#i-phone"/></svg></span>
+          <span><small>Call the clinic</small><b>+91 91772 56111</b></span>
+        </a>
+        <a class="ci" href="https://wa.me/919177256111?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Dr.%20Rama%20Reddy%20Clinics." target="_blank" rel="noopener">
+          <span class="ibox"><svg class="icon"><use href="#i-chat"/></svg></span>
+          <span><small>Message us on WhatsApp</small><b>Send an appointment enquiry<svg class="icon"><use href="#i-right"/></svg></b></span>
+        </a>
+      </div>
+      <a href="tel:+919177256111" class="btn btn-light"><svg class="icon"><use href="#i-phone"/></svg>Call now</a>
     </div>
-    <div class="contact-grid">
-      <div class="info">
-        <div>
-          <div class="eyebrow">Address</div>
-          <p>Dr. Rama Reddy Clinics<br>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence,<br>Narayya Well Street, Anaparthi</p>
+    <div class="right">
+      <form id="enquiry">
+        <h3>Send an enquiry</h3>
+        <p>Fill in your details and we'll open WhatsApp with your message ready to send.</p>
+        <div class="row">
+          <label>Your name<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
+          <label>Phone number<input name="phone" type="tel" required autocomplete="tel" placeholder="Your contact number"></label>
         </div>
-        <div>
-          <div class="eyebrow">Phone</div>
-          <p><a href="tel:+919177256111">91772 56111</a></p>
+        <label>Preferred doctor
+          <select name="doctor" required>
+            <option value="">Choose a specialist</option>
+            <option>Dr. Tetali Rama Reddy (Psychiatry)</option>
+            <option>Dr. Bobba Rachana (ENT)</option>
+          </select>
+        </label>
+        <label>Message <span>(optional)</span><textarea name="message" placeholder="How can we help?"></textarea></label>
+        <div class="submit-row">
+          <button class="btn btn-primary" type="submit">Send on WhatsApp<svg class="icon"><use href="#i-right"/></svg></button>
+          <small>For a confirmed visit, please phone the clinic directly.</small>
         </div>
-        <div>
-          <div class="eyebrow">Web</div>
-          <p><a href="https://www.tetaliramareddy.com">www.tetaliramareddy.com</a></p>
-        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap">
+    <div class="visit-top">
+      <div>
+        <div class="eyebrow">Find and contact us</div>
+        <h2 class="h2">Visit Dr. Rama Reddy Clinics.</h2>
+        <p class="lead">Serving patients in Anaparthi and the surrounding community.</p>
       </div>
-      <div class="map">
-        <iframe title="Dr. Rama Reddy Clinics location" loading="lazy" src="https://www.google.com/maps?q=Narayya+Well+Street,+Anaparthi,+Andhra+Pradesh&output=embed"></iframe>
+      <div class="visit-grid">
+        <div class="vi"><svg class="icon"><use href="#i-pin"/></svg><div><b>Clinic location</b><p>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence, Narayya Well Street, Anaparthi</p><a class="more" href="https://www.google.com/maps/search/?api=1&query=Narayya+Well+Street,+Anaparthi,+Andhra+Pradesh" target="_blank" rel="noopener">Open in Maps<svg class="icon"><use href="#i-right"/></svg></a></div></div>
+        <div class="vi"><svg class="icon"><use href="#i-phone"/></svg><div><b>Telephone</b><p><a href="tel:+919177256111">+91 91772 56111</a><br>Prior appointment is necessary.</p></div></div>
+        <div class="vi"><svg class="icon"><use href="#i-award"/></svg><div><b>Clinic registration</b><p>APMCFMR/95318</p></div></div>
+        <div class="vi"><svg class="icon"><use href="#i-chat"/></svg><div><b>WhatsApp</b><p><a href="https://wa.me/919177256111" target="_blank" rel="noopener">Message the clinic</a></p></div></div>
       </div>
+    </div>
+    <div class="visit-bottom">
+      <a href="https://www.tetaliramareddy.com"><svg class="icon"><use href="#i-globe"/></svg>www.tetaliramareddy.com<svg class="icon"><use href="#i-right"/></svg></a>
+      <a href="tel:+919177256111" class="btn btn-light btn-sm"><svg class="icon"><use href="#i-phone"/></svg>Call to arrange a visit</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> <b>Dr. Rama Reddy Clinics</b>, Anaparthi</span>
-    <span>Regd No. APMCFMR/95318</span>
+    <div class="f-top">
+      <div>
+        <a href="#" class="logo">
+          <span class="ibox"><svg class="icon"><use href="#i-leaf"/></svg></span>
+          <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
+        </a>
+        <p>Specialist outpatient care in psychiatry and ENT, in Anaparthi, Andhra Pradesh.</p>
+      </div>
+      <div class="f-nav">
+        <a href="#about">About</a>
+        <a href="#doctors">Our doctors</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="yr">2026</span> Dr. Rama Reddy Clinics. All rights reserved.</span>
+      <span>+91 91772 56111 · Anaparthi, Andhra Pradesh</span>
+    </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/919177256111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="icon"><use href="#i-chat"/></svg></a>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  const form = document.getElementById('enquiry');
+  // "Request a consultation" / "Ask about…" buttons preselect the doctor
+  document.querySelectorAll('[data-doctor]').forEach(a =>
+    a.addEventListener('click', () => { form.doctor.value = a.dataset.doctor; }));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = form.elements;
+    const text = `Hello Dr. Rama Reddy Clinics,\nName: ${f.name.value.trim()}\nPhone: ${f.phone.value.trim()}\nDoctor: ${f.doctor.value}` +
+      (f.message.value.trim() ? `\nMessage: ${f.message.value.trim()}` : '');
+    window.open('https://wa.me/919177256111?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+</script>
 </body>
 </html>
