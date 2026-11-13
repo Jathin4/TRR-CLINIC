@@ -19,6 +19,8 @@
     --cream: #fff9f0;
     --ent: #8f1d3f;
     --ent-soft: #f6e9ea;
+    --rx: #1d5f8f;
+    --rx-soft: #e8f1f8;
     --serif: "DM Serif Display", Georgia, serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -133,7 +135,14 @@
   @media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo img { height: 300px; } }
 
   /* Services */
-  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px; margin-top: 28px; }
+  .svc { display: flex; flex-direction: column; }
+  .svc ul { flex: 1; }
+  .svc .btn { align-self: flex-start; }
+  .svc.rx .svc-head { background: var(--rx-soft); }
+  .svc.rx .svc-head small, .svc.rx h3, .svc.rx .svc-head .ibox, .svc.rx li .icon { color: var(--rx); }
+  .btn-rx { background: #fff; color: var(--rx); border-color: #bcd3e6; }
+  .btn-rx:hover { background: var(--rx-soft); }
   .svc { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
   .svc-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 26px 28px; background: var(--green-soft); }
   .svc.ent .svc-head { background: var(--ent-soft); }
@@ -150,7 +159,6 @@
   .svc .btn { margin: 8px 28px 28px; }
   .btn-ent { background: #fff; color: var(--ent); border-color: #e3c4cb; }
   .btn-ent:hover { background: var(--ent-soft); }
-  @media (max-width: 860px) { .svc-grid { grid-template-columns: 1fr; } }
 
   /* Why */
   .why { background: var(--primary); color: #fff; }
@@ -217,7 +225,10 @@
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-6 .1 4 4 0 0 0-2.5 5.8 4 4 0 0 0 .5 6.6A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 6 .1 4 4 0 0 1 2.5 5.8 4 4 0 0 1-.5 6.6A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4M17.6 6.5a3 3 0 0 0 .4-1.4M6 5.1a3 3 0 0 0 .4 1.4M3.5 10.9a4 4 0 0 1 .6-.4M19.9 10.5a4 4 0 0 1 .6.4M6 18a4 4 0 0 1-2-.5M20 17.5a4 4 0 0 1-2 .5"/></symbol>
+  <!-- ENT: head profile with ear, nose and throat/neck -->
+  <symbol id="i-ent" viewBox="0 0 24 24"><path d="M7 22v-4.2C4.6 16.4 3 13.9 3 11a8 8 0 0 1 15.6-2.4l.4 1.4 1.8 3.2a.6.6 0 0 1-.5.9H19v2.4a1.6 1.6 0 0 1-1.6 1.6H15.5V22"/><path d="M9.5 8.3a2.6 2.6 0 0 0 0 5.2"/><path d="M18.6 12.4H15a2.6 2.6 0 0 0-2.6 2.6V22"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a5 5 0 1 0-7-7l-10 10a5 5 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
@@ -238,7 +249,7 @@
 <header>
   <div class="wrap">
     <a href="#" class="logo" aria-label="Dr. Rama Reddy Clinics home">
-      <span class="ibox"><svg class="icon"><use href="#i-leaf"/></svg></span>
+      <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
       <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
     </a>
     <nav>
@@ -254,7 +265,7 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="pill"><svg class="icon"><use href="#i-pin"/></svg>Specialist care in Anaparthi, Andhra Pradesh</span>
+     
       <h1>Your health,<br><span class="g">our priority.</span></h1>
       <p class="tagline">Compassionate Care. Expert Doctors. Better Living.</p>
       <p class="lead">Thoughtful outpatient care for mental well-being and ear, nose and throat health, with experienced specialist doctors in one welcoming clinic.</p>
@@ -295,9 +306,9 @@
     </div>
     <div class="features">
       <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span><div><b>Care shaped around you</b><p>Thoughtful attention that considers your individual needs and well-being.</p></div></div>
-      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-steth"/></svg></span><div><b>Experienced specialists</b><p>Meet the psychiatry and ENT specialists caring for the people of Anaparthi.</p></div></div>
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-steth"/></svg></span><div><b>Experienced specialists</b><p>Meet the psychiatry and ENT specialists caring for the people.</p></div></div>
       <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-spark"/></svg></span><div><b>A comfortable setting</b><p>A welcoming outpatient clinic for unhurried, professional consultations.</p></div></div>
-      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span><div><b>Whole-person well-being</b><p>A focus on both mental health and ear, nose and throat care.</p></div></div>
+      <div class="feature"><span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span><div><b>Holistic wellbeing</b><p>A focus on both mental health and ear, nose and throat care.</p></div></div>
     </div>
   </div>
 </section>
@@ -344,12 +355,12 @@
   <div class="wrap">
     <div class="eyebrow">Our services</div>
     <h2 class="h2">The right specialist, <span class="g">close to home.</span></h2>
-    <p class="lead">Consultations and specialist services across two dedicated outpatient practices.</p>
+    <p class="lead">Consultations across two dedicated specialist practices, with an in-clinic pharmacy.</p>
     <div class="svc-grid">
       <div class="svc">
         <div class="svc-head">
           <div><small>Thoughtful mind care</small><h3>Psychiatry</h3></div>
-          <span class="ibox"><svg class="icon"><use href="#i-heart"/></svg></span>
+          <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
         </div>
         <ul>
           <li><svg class="icon"><use href="#i-check"/></svg>Mental Health Evaluation &amp; Treatment</li>
@@ -363,7 +374,7 @@
       <div class="svc ent">
         <div class="svc-head">
           <div><small>Specialist ENT care</small><h3>ENT</h3></div>
-          <span class="ibox"><svg class="icon"><use href="#i-ear"/></svg></span>
+          <span class="ibox"><svg class="icon"><use href="#i-ent"/></svg></span>
         </div>
         <ul>
           <li><svg class="icon"><use href="#i-check"/></svg>Nasal Endoscopy</li>
@@ -372,6 +383,19 @@
           <li><svg class="icon"><use href="#i-check"/></svg>Diagnostic Laryngoscopy</li>
         </ul>
         <a href="#contact" class="btn btn-ent btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Ask about ENT care<svg class="icon"><use href="#i-right"/></svg></a>
+      </div>
+      <div class="svc rx">
+        <div class="svc-head">
+          <div><small>In-clinic pharmacy</small><h3>Pharmacy</h3></div>
+          <span class="ibox"><svg class="icon"><use href="#i-pill"/></svg></span>
+        </div>
+        <ul>
+          <li><svg class="icon"><use href="#i-check"/></svg>Prescription Dispensing</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Genuine, Quality Medicines</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Medication Guidance</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Refills for Ongoing Treatment</li>
+        </ul>
+        <a href="#contact" class="btn btn-rx btn-sm" data-doctor="Pharmacy enquiry">Ask about pharmacy<svg class="icon"><use href="#i-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -420,11 +444,12 @@
           <label>Your name<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
           <label>Phone number<input name="phone" type="tel" required autocomplete="tel" placeholder="Your contact number"></label>
         </div>
-        <label>Preferred doctor
+        <label>Doctor or service
           <select name="doctor" required>
-            <option value="">Choose a specialist</option>
+            <option value="">Choose a doctor or service</option>
             <option>Dr. Tetali Rama Reddy (Psychiatry)</option>
             <option>Dr. Bobba Rachana (ENT)</option>
+            <option>Pharmacy enquiry</option>
           </select>
         </label>
         <label>Message <span>(optional)</span><textarea name="message" placeholder="How can we help?"></textarea></label>
@@ -448,12 +473,11 @@
       <div class="visit-grid">
         <div class="vi"><svg class="icon"><use href="#i-pin"/></svg><div><b>Clinic location</b><p>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence, Narayya Well Street, Anaparthi</p><a class="more" href="https://www.google.com/maps/search/?api=1&query=Narayya+Well+Street,+Anaparthi,+Andhra+Pradesh" target="_blank" rel="noopener">Open in Maps<svg class="icon"><use href="#i-right"/></svg></a></div></div>
         <div class="vi"><svg class="icon"><use href="#i-phone"/></svg><div><b>Telephone</b><p><a href="tel:+919177256111">+91 91772 56111</a><br>Prior appointment is necessary.</p></div></div>
-        <div class="vi"><svg class="icon"><use href="#i-award"/></svg><div><b>Clinic registration</b><p>APMCFMR/95318</p></div></div>
         <div class="vi"><svg class="icon"><use href="#i-chat"/></svg><div><b>WhatsApp</b><p><a href="https://wa.me/919177256111" target="_blank" rel="noopener">Message the clinic</a></p></div></div>
       </div>
     </div>
     <div class="visit-bottom">
-      <a href="https://trr-clinic.pages.dev"><svg class="icon"><use href="#i-globe"/></svg>trr-clinic.pages.dev<svg class="icon"><use href="#i-right"/></svg></a>
+      <a href="https:// https://trr-clinic.pages.dev"><svg class="icon"><use href="#i-globe"/></svg> https://trr-clinic.pages.dev<svg class="icon"><use href="#i-right"/></svg></a>
       <a href="tel:+919177256111" class="btn btn-light btn-sm"><svg class="icon"><use href="#i-phone"/></svg>Call to arrange a visit</a>
     </div>
   </div>
@@ -464,7 +488,7 @@
     <div class="f-top">
       <div>
         <a href="#" class="logo">
-          <span class="ibox"><svg class="icon"><use href="#i-leaf"/></svg></span>
+          <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
           <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
         </a>
         <p>Specialist outpatient care in psychiatry and ENT, in Anaparthi, Andhra Pradesh.</p>
@@ -494,7 +518,7 @@
   form.addEventListener('submit', e => {
     e.preventDefault();
     const f = form.elements;
-    const text = `Hello Dr. Rama Reddy Clinics,\nName: ${f.name.value.trim()}\nPhone: ${f.phone.value.trim()}\nDoctor: ${f.doctor.value}` +
+    const text = `Hello Dr. Rama Reddy Clinics,\nName: ${f.name.value.trim()}\nPhone: ${f.phone.value.trim()}\nRegarding: ${f.doctor.value}` +
       (f.message.value.trim() ? `\nMessage: ${f.message.value.trim()}` : '');
     window.open('https://wa.me/919177256111?text=' + encodeURIComponent(text), '_blank', 'noopener');
   });
