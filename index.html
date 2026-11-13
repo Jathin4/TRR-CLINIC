@@ -10,25 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #1d5f8f;
-    --primary-dark: #164b72;
-    --book: #1d5f8f;          /* site blue: booking buttons */
-    --book-dark: #164b72;
+    --primary: #08613f;
+    --primary-dark: #064d32;
+    --book: #08613f;          /* green: booking buttons */
+    --book-dark: #064d32;
     /* department accents */
-    --psy: #6d5bd0;           /* Psychiatry – lavender */
-    --psy-soft: #f1effc;
-    --ink: #1b2a3a;
-    --muted: #55657a;
-    --line: #dbe4ee;
-    --soft: #eaf4fb;
-    --cream: #f5f9fd;
-    --ent: #0e7c86;           /* ENT – teal */
-    --ent-soft: #e3f4f5;
+    --psy: #08613f;           /* Psychiatry – clinic green */
+    --psy-soft: #eaf4e8;
+    --ink: #1e2a23;
+    --muted: #526259;
+    --line: #dbe4db;
+    --soft: #eaf4e8;
+    --cream: #f4f9f3;
+    --ent: #0f766e;           /* ENT – teal green */
+    --ent-soft: #e0f2ef;
     --rx: #2e7d32;            /* Pharmacy – green */
     --rx-soft: #e8f5e9;
-    --blue: #1d5f8f;        /* trust blue */
-    --blue-soft: #eaf4fb;
-    --blue-line: #cfe2f0;
+    --blue: #08613f;        /* brand green */
+    --blue-soft: #eaf4e8;
+    --blue-line: #cfe5d3;
     --serif: "DM Serif Display", Georgia, serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -155,7 +155,7 @@
   .btn-rx { background: #fff; color: var(--rx); border-color: #c3e0c5; }
   .doc.psy .doc-photo, .svc.psy .svc-head { background: var(--psy-soft); }
   .doc.psy .role, .svc.psy .svc-head small, .svc.psy h3, .svc.psy .svc-head .ibox, .svc.psy li .icon { color: var(--psy); }
-  .btn-psy { background: #fff; color: var(--psy); border-color: #d5cff3; }
+  .btn-psy { background: #fff; color: var(--psy); border-color: #c5dfcc; }
   .btn-psy:hover { background: var(--psy-soft); }
   .btn-rx:hover { background: var(--rx-soft); }
   .svc { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -172,11 +172,11 @@
   .svc li .icon { color: var(--primary); width: 16px; height: 16px; }
   .svc.ent li .icon { color: var(--ent); }
   .svc .btn { margin: 8px 28px 28px; }
-  .btn-ent { background: #fff; color: var(--ent); border-color: #b3dfe2; }
+  .btn-ent { background: #fff; color: var(--ent); border-color: #b8dcd6; }
   .btn-ent:hover { background: var(--ent-soft); }
 
   /* Why */
-  .why { background: linear-gradient(135deg, #e3f0fa, #d3e7f6); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
+  .why { background: linear-gradient(135deg, #eaf4e8, #d9ecd8); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
   .why .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
   .why .eyebrow { color: var(--blue); }
   .why h2 .g { color: var(--blue); }
@@ -231,11 +231,11 @@
   footer { background: var(--primary); color: #fff; padding: 48px 0 28px; }
   .f-top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); }
   footer .logo .ibox { background: rgba(255,255,255,.12); color: #fff; }
-  footer .logo small { color: #cfe0ee; }
-  footer p { color: #dae8f3; max-width: 360px; margin-top: 14px; font-size: 15px; }
-  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6eff7; font-size: 15px; }
+  footer .logo small { color: #cfe6d9; }
+  footer p { color: #d7e9de; max-width: 360px; margin-top: 14px; font-size: 15px; }
+  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6f2eb; font-size: 15px; }
   .f-nav a:hover { color: #fff; text-decoration: underline; }
-  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe0ee; }
+  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe6d9; }
 </style>
 </head>
 <body>
