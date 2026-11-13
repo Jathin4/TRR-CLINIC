@@ -10,17 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #08613f;
-    --primary-dark: #064d32;
-    --ink: #1e2a23;
-    --muted: #526259;
-    --line: #dbe4db;
-    --green-soft: #eaf4e8;
-    --cream: #fff9f0;
-    --ent: #8f1d3f;
-    --ent-soft: #f6e9ea;
-    --rx: #1d5f8f;
-    --rx-soft: #e8f1f8;
+    --primary: #1d5f8f;
+    --primary-dark: #164b72;
+    --book: #1d5f8f;          /* site blue: booking buttons */
+    --book-dark: #164b72;
+    /* department accents */
+    --psy: #6d5bd0;           /* Psychiatry – lavender */
+    --psy-soft: #f1effc;
+    --ink: #1b2a3a;
+    --muted: #55657a;
+    --line: #dbe4ee;
+    --soft: #eaf4fb;
+    --cream: #f5f9fd;
+    --ent: #0e7c86;           /* ENT – teal */
+    --ent-soft: #e3f4f5;
+    --rx: #2e7d32;            /* Pharmacy – green */
+    --rx-soft: #e8f5e9;
+    --blue: #1d5f8f;        /* trust blue */
+    --blue-soft: #eaf4fb;
+    --blue-line: #cfe2f0;
     --serif: "DM Serif Display", Georgia, serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,11 +45,13 @@
   section { padding: 56px 0; }
   .h2 { font-size: clamp(34px, 4.4vw, 48px); margin: 14px 0 20px; }
   .lead { color: var(--muted); font-size: 17px; }
-  .ibox { width: 40px; height: 40px; border-radius: 10px; background: var(--green-soft); color: var(--primary); display: grid; place-items: center; flex-shrink: 0; }
+  .ibox { width: 40px; height: 40px; border-radius: 10px; background: var(--soft); color: var(--primary); display: grid; place-items: center; flex-shrink: 0; }
 
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap; border: 1px solid transparent; cursor: pointer; font-family: inherit; transition: background .15s, box-shadow .15s; }
   .btn-primary { background: var(--primary); color: #fff; }
   .btn-primary:hover { background: var(--primary-dark); }
+  .btn-book { background: var(--book); color: #fff; }
+  .btn-book:hover { background: var(--book-dark); }
   .btn-light { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
   .btn-light:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
   .btn-sm { padding: 9px 16px; font-size: 14px; }
@@ -101,10 +111,11 @@
   }
 
   /* Strip */
-  .strip { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .strip { background: var(--blue-soft); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
   .strip .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 28px; padding-top: 20px; padding-bottom: 20px; font-weight: 500; }
   .strip span { display: flex; align-items: center; gap: 10px; }
-  .strip .icon { color: var(--primary); }
+  .strip .icon { color: var(--blue); }
+  .features .ibox, .ci .ibox { background: var(--blue-soft); color: var(--blue); }
 
   /* About */
   .about .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
@@ -116,13 +127,13 @@
   @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
 
   /* Doctors */
-  .doctors { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .doctors { background: var(--blue-soft); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
   .split-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
   .split-head .h2 { max-width: 680px; margin-bottom: 0; }
   .split-head p { max-width: 340px; color: var(--muted); }
   .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 24px; }
   .doc { display: grid; grid-template-columns: 40% 1fr; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .doc-photo { position: relative; background: var(--green-soft); }
+  .doc-photo { position: relative; background: var(--soft); }
   .doc.ent .doc-photo { background: var(--ent-soft); }
   .doc-photo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; object-position: center top; }
   .tag { position: absolute; left: 12px; bottom: 12px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
@@ -141,10 +152,14 @@
   .svc .btn { align-self: flex-start; }
   .svc.rx .svc-head { background: var(--rx-soft); }
   .svc.rx .svc-head small, .svc.rx h3, .svc.rx .svc-head .ibox, .svc.rx li .icon { color: var(--rx); }
-  .btn-rx { background: #fff; color: var(--rx); border-color: #bcd3e6; }
+  .btn-rx { background: #fff; color: var(--rx); border-color: #c3e0c5; }
+  .doc.psy .doc-photo, .svc.psy .svc-head { background: var(--psy-soft); }
+  .doc.psy .role, .svc.psy .svc-head small, .svc.psy h3, .svc.psy .svc-head .ibox, .svc.psy li .icon { color: var(--psy); }
+  .btn-psy { background: #fff; color: var(--psy); border-color: #d5cff3; }
+  .btn-psy:hover { background: var(--psy-soft); }
   .btn-rx:hover { background: var(--rx-soft); }
   .svc { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .svc-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 26px 28px; background: var(--green-soft); }
+  .svc-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 26px 28px; background: var(--soft); }
   .svc.ent .svc-head { background: var(--ent-soft); }
   .svc-head small { font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--primary); }
   .svc.ent .svc-head small, .svc.ent h3 { color: var(--ent); }
@@ -157,17 +172,18 @@
   .svc li .icon { color: var(--primary); width: 16px; height: 16px; }
   .svc.ent li .icon { color: var(--ent); }
   .svc .btn { margin: 8px 28px 28px; }
-  .btn-ent { background: #fff; color: var(--ent); border-color: #e3c4cb; }
+  .btn-ent { background: #fff; color: var(--ent); border-color: #b3dfe2; }
   .btn-ent:hover { background: var(--ent-soft); }
 
   /* Why */
-  .why { background: var(--primary); color: #fff; }
+  .why { background: linear-gradient(135deg, #e3f0fa, #d3e7f6); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
   .why .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
-  .why .eyebrow { color: #cfe6d9; }
-  .why p { color: #d7e9de; }
+  .why .eyebrow { color: var(--blue); }
+  .why h2 .g { color: var(--blue); }
+  .why p { color: var(--muted); }
   .why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-  .why-list span { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.18); font-weight: 500; }
-  .why-list .icon { color: #a9dcc0; }
+  .why-list span { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--blue-line); font-weight: 500; }
+  .why-list .icon { color: var(--blue); }
   @media (max-width: 860px) { .why .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
   @media (max-width: 560px) { .why-list { grid-template-columns: 1fr; } }
 
@@ -215,11 +231,11 @@
   footer { background: var(--primary); color: #fff; padding: 48px 0 28px; }
   .f-top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); }
   footer .logo .ibox { background: rgba(255,255,255,.12); color: #fff; }
-  footer .logo small { color: #cfe6d9; }
-  footer p { color: #d7e9de; max-width: 360px; margin-top: 14px; font-size: 15px; }
-  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6f2eb; font-size: 15px; }
+  footer .logo small { color: #cfe0ee; }
+  footer p { color: #dae8f3; max-width: 360px; margin-top: 14px; font-size: 15px; }
+  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6eff7; font-size: 15px; }
   .f-nav a:hover { color: #fff; text-decoration: underline; }
-  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe6d9; }
+  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe0ee; }
 </style>
 </head>
 <body>
@@ -258,7 +274,7 @@
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="btn btn-primary" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
+    <a href="#contact" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
   </div>
 </header>
 
@@ -270,7 +286,7 @@
       <p class="tagline">Compassionate Care. Expert Doctors. Better Living.</p>
       <p class="lead">Thoughtful outpatient care for mental well-being and ear, nose and throat health, with experienced specialist doctors in one welcoming clinic.</p>
       <div class="actions">
-        <a href="#contact" class="btn btn-primary"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
+        <a href="#contact" class="btn btn-book"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
         <a href="#services" class="btn btn-light">Explore services<svg class="icon"><use href="#i-down"/></svg></a>
       </div>
       <div class="trust">
@@ -321,7 +337,7 @@
       <p>Two specialist practices, dedicated to your mental and physical well-being.</p>
     </div>
     <div class="doc-grid">
-      <div class="doc">
+      <div class="doc psy">
         <div class="doc-photo">
           <img src="images/dr-rama-reddy.jpg" alt="Dr. Tetali Rama Reddy">
           <span class="tag">Psychiatry</span>
@@ -357,7 +373,7 @@
     <h2 class="h2">The right specialist, <span class="g">close to home.</span></h2>
     <p class="lead">Consultations across two dedicated specialist practices, with an in-clinic pharmacy.</p>
     <div class="svc-grid">
-      <div class="svc">
+      <div class="svc psy">
         <div class="svc-head">
           <div><small>Thoughtful mind care</small><h3>Psychiatry</h3></div>
           <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
@@ -369,7 +385,7 @@
           <li><svg class="icon"><use href="#i-check"/></svg>De-addiction</li>
           <li><svg class="icon"><use href="#i-check"/></svg>Follow-up &amp; Continuity Care</li>
         </ul>
-        <a href="#contact" class="btn btn-primary btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Ask about psychiatry<svg class="icon"><use href="#i-right"/></svg></a>
+        <a href="#contact" class="btn btn-psy btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Ask about psychiatry<svg class="icon"><use href="#i-right"/></svg></a>
       </div>
       <div class="svc ent">
         <div class="svc-head">
@@ -405,7 +421,7 @@
   <div class="wrap">
     <div>
       <div class="eyebrow">Why patients choose us</div>
-      <h2 class="h2">Care is more than a consultation.</h2>
+      <h2 class="h2">Care is more than <span class="g">a consultation.</span></h2>
       <p>We value clear guidance, thoughtful treatment and care that continues beyond your first visit.</p>
     </div>
     <div class="why-list">
@@ -454,7 +470,7 @@
         </label>
         <label>Message <span>(optional)</span><textarea name="message" placeholder="How can we help?"></textarea></label>
         <div class="submit-row">
-          <button class="btn btn-primary" type="submit">Send on WhatsApp<svg class="icon"><use href="#i-right"/></svg></button>
+          <button class="btn btn-book" type="submit">Send on WhatsApp<svg class="icon"><use href="#i-right"/></svg></button>
           <small>For a confirmed visit, please phone the clinic directly.</small>
         </div>
       </form>
