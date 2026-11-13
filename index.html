@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TRR Clinics – Anaparthi</title>
-<meta name="description" content="TRR Clinics, Anaparthi – Specialist psychiatry and ENT outpatient clinic. Dr. Tetali Rama Reddy and Dr. Bobba Rachana. Call 91772 56111.">
+<title>Dr. Rama Reddy Clinics – Anaparthi</title>
+<meta name="description" content="Dr. Rama Reddy Clinics, Anaparthi – Specialist psychiatry and ENT outpatient clinic. Dr. Tetali Rama Reddy and Dr. Bobba Rachana. Call 91772 56111.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -59,12 +59,14 @@
   .btn-primary { background: var(--primary); color: #fff; }
   .btn-accent { background: var(--accent); color: #fff; }
   .btn-outline { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
-  .logo-text small { white-space: nowrap; }
-  @media (max-width: 860px) { nav { display: none; } .logo-text { font-size: 26px; } header .btn { padding: 12px 18px; } }
+  .logo-text { white-space: nowrap; }
+  @media (max-width: 1080px) { nav { gap: 24px; } }
+  @media (max-width: 960px) { nav { display: none; } .logo-text { font-size: 26px; } header .btn { padding: 12px 18px; } }
   @media (max-width: 560px) {
-    .logo svg { width: 38px; height: 38px; }
-    .logo-text { font-size: 24px; }
-    .logo-text small { font-size: 9px; letter-spacing: .5px; }
+    .logo { gap: 10px; }
+    .logo svg { width: 34px; height: 34px; }
+    .logo-text { font-size: 21px; white-space: nowrap; }
+    .logo-text small { font-size: 8.5px; letter-spacing: .3px; }
     header .btn { padding: 0; width: 48px; height: 48px; justify-content: center; border-radius: 50%; }
     header .btn .label { display: none; }
     header .btn .icon { width: 22px; height: 22px; }
@@ -98,7 +100,8 @@
   .name-card span { font-size: 14px; color: var(--muted); }
 
   @media (max-width: 860px) {
-    .hero .wrap { grid-template-columns: 1fr; }
+    .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+    .hero h1 { font-size: clamp(40px, 12vw, 64px); }
     .hero-text { padding-left: 0; }
     .hero-text .qm { display: none; }
     .arch { width: 300px; margin-top: 20px; }
@@ -120,7 +123,7 @@
 
   /* Doctors */
   .doctors { background: var(--soft); }
-  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
   .doc { background: #fff; display: grid; grid-template-columns: 170px 1fr; gap: 26px; padding: 26px; border-left: 4px solid var(--psych); box-shadow: 0 12px 32px rgba(11,59,69,.07); }
   .doc.ent { border-left-color: var(--ent); }
   .doc img { width: 170px; height: 220px; object-fit: cover; object-position: top; border-radius: 90px 90px 4px 4px; background: var(--psych-soft); }
@@ -197,13 +200,13 @@
 
 <header>
   <div class="wrap">
-    <a href="#" class="logo" aria-label="TRR Clinics home">
+    <a href="#" class="logo" aria-label="Dr. Rama Reddy Clinics home">
       <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="#0f766e" stroke-width="1.6">
         <circle cx="24" cy="24" r="21"/>
         <path d="M8 40 40 8"/>
         <path d="M24 13c1 6 3 9 9 11-6 2-8 5-9 11-1-6-3-9-9-11 6-2 8-5 9-11z" fill="#0f766e"/>
       </svg>
-      <span class="logo-text">TRR Clinics<small>REGD NO. : APMCFMR/95318</small></span>
+      <span class="logo-text">Dr. Rama Reddy Clinics<small>REGD NO. : APMCFMR/95318</small></span>
     </a>
     <nav>
       <a href="#doctors">Doctors</a>
@@ -247,7 +250,7 @@
 
 <div class="strip">
   <div class="wrap">
-    <h2>TRR Clinics — <em>Specialist Outpatient Clinic</em></h2>
+    <h2>Dr. Rama Reddy Clinics — <em>Specialist Outpatient Clinic</em></h2>
     <div class="eyebrow">Psychiatry · ENT</div>
   </div>
 </div>
@@ -265,7 +268,7 @@
           <div class="eyebrow">Consultant Psychiatrist</div>
           <h3>Dr. Tetali Rama Reddy</h3>
           <div class="deg">MBBS, MD (Psychiatry), D.C.P.</div>
-          <p>Founder of TRR Clinics. Compassionate, evidence-based care for mental health, from evaluation and counselling to de-addiction and long-term follow-up.</p>
+          <p>Founder of Dr. Rama Reddy Clinics. Compassionate, evidence-based care for mental health, from evaluation and counselling to de-addiction and long-term follow-up.</p>
         </div>
       </div>
       <div class="doc ent">
@@ -321,7 +324,7 @@
     <a href="tel:+919177256111" class="phone">91772 56111</a>
     <div class="appt-actions">
       <a href="tel:+919177256111" class="btn btn-accent"><svg class="icon"><use href="#i-phone"/></svg>Call to book</a>
-      <a href="https://wa.me/919177256111?text=Hello%20TRR%20Clinics%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp us</a>
+      <a href="https://wa.me/919177256111?text=Hello%20Dr.%20Rama%20Reddy%20Clinics%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp us</a>
     </div>
   </div>
 </section>
@@ -336,7 +339,7 @@
       <div class="info">
         <div>
           <div class="eyebrow">Address</div>
-          <p>TRR Clinics<br>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence,<br>Narayya Well Street, Anaparthi</p>
+          <p>Dr. Rama Reddy Clinics<br>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence,<br>Narayya Well Street, Anaparthi</p>
         </div>
         <div>
           <div class="eyebrow">Phone</div>
@@ -348,7 +351,7 @@
         </div>
       </div>
       <div class="map">
-        <iframe title="TRR Clinics location" loading="lazy" src="https://www.google.com/maps?q=Narayya+Well+Street,+Anaparthi,+Andhra+Pradesh&output=embed"></iframe>
+        <iframe title="Dr. Rama Reddy Clinics location" loading="lazy" src="https://www.google.com/maps?q=Narayya+Well+Street,+Anaparthi,+Andhra+Pradesh&output=embed"></iframe>
       </div>
     </div>
   </div>
@@ -356,7 +359,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> <b>TRR Clinics</b>, Anaparthi</span>
+    <span>© <span id="yr">2026</span> <b>Dr. Rama Reddy Clinics</b>, Anaparthi</span>
     <span>Regd No. APMCFMR/95318</span>
   </div>
 </footer>
