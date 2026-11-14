@@ -16,9 +16,7 @@
   <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-6 .1 4 4 0 0 0-2.5 5.8 4 4 0 0 0 .5 6.6A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 6 .1 4 4 0 0 1 2.5 5.8 4 4 0 0 1-.5 6.6A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4M17.6 6.5a3 3 0 0 0 .4-1.4M6 5.1a3 3 0 0 0 .4 1.4M3.5 10.9a4 4 0 0 1 .6-.4M19.9 10.5a4 4 0 0 1 .6.4M6 18a4 4 0 0 1-2-.5M20 17.5a4 4 0 0 1-2 .5"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
-  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
   <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol>
-  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
 </svg>
 
@@ -28,7 +26,7 @@
       <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
       <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
     </a>
-    <nav>
+    <nav onclick="document.body.classList.remove('menu-open')">
       <a href="index.html#about">About</a>
       <a href="index.html#doctors">Our doctors</a>
       <a href="index.html#services">Services</a>
@@ -37,6 +35,7 @@
       <a href="index.html#contact">Contact</a>
     </nav>
     <a href="tel:+919177256111" class="btn btn-light" aria-label="Call the clinic"><svg class="icon"><use href="#i-phone"/></svg><span class="long">91772 56111</span></a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.body.classList.toggle('menu-open'))"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
 </header>
 
@@ -81,13 +80,7 @@
         </div>
         <p class="hint">Scan with any UPI app (GPay, PhonePe, Paytm) and pay <b id="fee2">the fee</b>.</p>
         <label>Transaction ID / UTR number<input name="txn" required minlength="6" autocomplete="off" placeholder="e.g. 412345678901"></label>
-        <label>Payment screenshot
-          <span class="upload">
-            <input name="shot" type="file" accept="image/*" required>
-            <span class="upload-ui"><svg class="icon"><use href="#i-upload"/></svg><span id="shot-name">Upload photo of your payment</span></span>
-          </span>
-        </label>
-        <img id="shot-preview" class="shot-preview" alt="Payment screenshot preview" hidden>
+        <p class="hint utr-hint">You'll find the 12-digit UTR / transaction ID in your UPI app's payment details. The clinic uses it to verify your payment.</p>
       </div>
 
       <div class="book-submit">
@@ -98,14 +91,12 @@
     </form>
 
     <!-- Shown after the booking text is sent -->
-    <div id="step-photo" class="book-card done" hidden>
-      <div class="step"><span><svg class="icon"><use href="#i-check"/></svg></span>Booking details sent to WhatsApp</div>
-      <p><b>One more step:</b> send your payment screenshot to the clinic in the same WhatsApp chat (<b>91772 56111</b>).</p>
+    <div id="sent" class="book-card done" hidden>
+      <div class="step"><span><svg class="icon"><use href="#i-check"/></svg></span>WhatsApp opened with your booking</div>
+      <p>Press <b>Send</b> in WhatsApp to send your booking to <b>91772 56111</b>. The clinic will verify your payment and confirm your appointment.</p>
       <div class="actions">
-        <button id="share-shot" class="btn btn-book" type="button" hidden><svg class="icon"><use href="#i-share"/></svg>Share screenshot to WhatsApp</button>
         <a id="reopen" class="btn btn-light" target="_blank" rel="noopener">Open the WhatsApp chat again</a>
       </div>
-      <p class="hint" id="attach-help">In WhatsApp, tap the 📎 (attach) icon → Gallery, and choose your payment screenshot.</p>
     </div>
   </div>
 </section>
@@ -143,16 +134,6 @@
   const pre = new URLSearchParams(location.search).get('doctor');
   if (DOCTORS[pre]) { f.doctor.value = pre; showFee(); }
 
-  // Screenshot preview (stays in the browser only)
-  const preview = document.getElementById('shot-preview');
-  f.shot.addEventListener('change', () => {
-    const file = f.shot.files[0];
-    document.getElementById('shot-name').textContent = file ? file.name : 'Upload photo of your payment';
-    if (preview.src) URL.revokeObjectURL(preview.src);
-    preview.hidden = !file;
-    if (file) preview.src = URL.createObjectURL(file);
-  });
-
   form.addEventListener('submit', e => {
     e.preventDefault();
     const err = document.getElementById('form-error');
@@ -173,22 +154,13 @@
       'Doctor: ' + d.name,
       ...referral,
       'Consultation fee: ₹' + d.fee,
-      'Transaction ID: ' + f.txn.value.trim(),
-      'Payment screenshot: sending in this chat',
+      'Transaction ID (UTR): ' + f.txn.value.trim(),
     ].join('\n');
     const url = 'https://wa.me/' + CLINIC_WA + '?text=' + encodeURIComponent(text);
     window.open(url, '_blank', 'noopener');
 
-    // Step 2: payment screenshot (WhatsApp links can't carry files)
-    const file = f.shot.files[0];
     document.getElementById('reopen').href = url;
-    const share = document.getElementById('share-shot');
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      share.hidden = false;
-      share.onclick = () => navigator.share({ files: [file], text: 'Payment screenshot – ' + f.name.value.trim() + ', Txn ' + f.txn.value.trim() }).catch(() => {});
-      document.getElementById('attach-help').textContent = 'Tap "Share screenshot to WhatsApp", choose WhatsApp, then pick the clinic chat (91772 56111). Or attach it manually with the 📎 icon.';
-    }
-    const done = document.getElementById('step-photo');
+    const done = document.getElementById('sent');
     done.hidden = false;
     done.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });

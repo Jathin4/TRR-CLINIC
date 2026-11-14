@@ -25,7 +25,7 @@
       <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
       <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
     </a>
-    <nav>
+    <nav onclick="document.body.classList.remove('menu-open')">
       <a href="index.html#about">About</a>
       <a href="index.html#doctors">Our doctors</a>
       <a href="index.html#services">Services</a>
@@ -34,6 +34,7 @@
       <a href="index.html#contact">Contact</a>
     </nav>
     <a href="book.html" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.body.classList.toggle('menu-open'))"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
 </header>
 
@@ -58,7 +59,7 @@
 <section class="testimonials">
   <div class="wrap">
     <div class="eyebrow">Written reviews</div>
-    <h2 class="h2">Kind words from <span class="g">our patients.</span></h2>
+    <h2 class="h2">Patient <span class="g">Experiences.</span></h2>
     <div class="t-grid"></div>
   </div>
 </section>

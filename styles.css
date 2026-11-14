@@ -50,17 +50,33 @@ section { padding: 56px 0; }
 /* Header */
 header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 /* header spans the full width: logo far left, Book button far right */
-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; max-width: none; padding: 0 40px; }
+header .wrap { display: flex; align-items: center; gap: 16px; height: 76px; max-width: none; padding: 0 40px; }
 nav a.active { color: var(--primary); font-weight: 600; }
 nav a { white-space: nowrap; }
 .logo { display: flex; align-items: center; gap: 12px; }
 .logo .ibox { width: 44px; height: 44px; }
 .logo b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.1; white-space: nowrap; }
 .logo small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 2px; color: var(--muted); white-space: nowrap; }
-nav { display: flex; gap: 32px; color: var(--muted); font-weight: 500; }
+nav { display: flex; gap: 32px; margin: 0 auto; color: var(--muted); font-weight: 500; }
 nav a:hover { color: var(--primary); }
 @media (max-width: 1320px) { nav { gap: 22px; } header .wrap { padding: 0 24px; } }
-@media (max-width: 1180px) { nav { display: none; } }
+/* Phone / tablet menu: ☰ button opens the links as a dropdown under the header */
+.menu-btn { display: none; width: 44px; height: 44px; flex-shrink: 0; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
+.menu-btn .icon { width: 22px; height: 22px; }
+/* the logo may shrink (never the buttons), so the header can't overflow */
+.logo, .logo > span:last-child { min-width: 0; }
+.logo b, .logo small { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 640px) { header .btn .long { display: none; } }
+@media (max-width: 1180px) {
+  nav { display: none; }
+  header .wrap > .btn { margin-left: auto; }
+  .menu-btn { display: inline-flex; }
+  body.menu-open .menu-btn { background: var(--soft); color: var(--primary); }
+  body.menu-open nav { display: flex; flex-direction: column; gap: 0; margin: 0; position: absolute; top: 100%; left: 0; right: 0; padding: 4px 24px 12px; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 14px 28px rgba(0,0,0,.08); }
+  body.menu-open nav a { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 16px; }
+  body.menu-open nav a:last-child { border-bottom: 0; }
+  body.menu-open nav a.active { color: var(--primary); }
+}
 @media (max-width: 560px) {
   .wrap, header .wrap { padding: 0 16px; }
   .logo .ibox { width: 38px; height: 38px; }
@@ -72,12 +88,15 @@ nav a:hover { color: var(--primary); }
   section.hero { padding: 28px 0 36px; }
 }
 
-@media (max-width: 400px) {
-  header .wrap { gap: 10px; }
+@media (max-width: 440px) {
+  header .wrap { gap: 8px; }
   header .btn-book .icon { display: none; }
+  header .logo .ibox { display: none; }
+  .menu-btn { width: 38px; height: 38px; }
+  header .wrap > .btn { padding: 9px 12px; font-size: 14px; }
   .logo { gap: 9px; }
   .logo .ibox { width: 34px; height: 34px; }
-  .logo b { font-size: 16.5px; }
+  .logo b { font-size: 16px; }
   .logo small { font-size: 8px; letter-spacing: .6px; }
 }
 
@@ -87,6 +106,10 @@ nav a:hover { color: var(--primary); }
 .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 40px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .pill .icon { width: 15px; height: 15px; color: var(--primary); }
 .hero h1 { font-size: clamp(48px, 7vw, 90px); margin: 22px 0 18px; }
+/* highlighted welcome label above the hero heading */
+.hero .eyebrow { display: inline-flex; font-size: 16px; letter-spacing: 2.5px; padding: 8px 18px; border-radius: 40px; background: var(--soft); border: 1px solid var(--blue-line); }
+.hero .eyebrow::before { display: none; }
+@media (max-width: 560px) { .hero .eyebrow { font-size: 12.5px; letter-spacing: 1.5px; padding: 7px 14px; } }
 .tagline { font-size: 19px; font-weight: 500; margin-bottom: 14px; }
 .hero .lead { max-width: 480px; margin-bottom: 30px; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -215,12 +238,7 @@ nav a:hover { color: var(--primary); }
 .qr-empty { height: 100%; display: grid; place-content: center; gap: 8px; text-align: center; color: var(--muted); font-size: 14px; background: var(--cream); }
 .qr-empty .icon { width: 44px; height: 44px; margin: 0 auto; color: var(--primary); }
 .hint { color: var(--muted); font-size: 14px; text-align: center; margin-bottom: 18px; }
-.upload { position: relative; display: block; margin-top: 7px; }
-.upload input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; }
-.upload-ui { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 18px; border: 1.5px dashed var(--blue-line); border-radius: 8px; background: var(--cream); color: var(--primary); font-weight: 600; overflow: hidden; }
-.upload-ui span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.upload input:focus-visible + .upload-ui { outline: 2px solid var(--primary); outline-offset: 1px; }
-.shot-preview { max-height: 180px; margin: -6px auto 0; border-radius: 8px; border: 1px solid var(--line); }
+.utr-hint { text-align: left; margin: -8px 0 0; font-size: 13px; }
 .book-submit { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .book-submit small { color: var(--muted); max-width: 520px; }
 .form-error { color: #b42318; background: #fef3f2; border: 1px solid #fecdca; border-radius: 8px; padding: 8px 14px; font-weight: 600; }
