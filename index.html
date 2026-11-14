@@ -8,235 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --primary: #08613f;
-    --primary-dark: #064d32;
-    --book: #08613f;          /* green: booking buttons */
-    --book-dark: #064d32;
-    /* department accents */
-    --psy: #08613f;           /* Psychiatry – clinic green */
-    --psy-soft: #eaf4e8;
-    --ink: #1e2a23;
-    --muted: #526259;
-    --line: #dbe4db;
-    --soft: #eaf4e8;
-    --cream: #f4f9f3;
-    --ent: #0f766e;           /* ENT – teal green */
-    --ent-soft: #e0f2ef;
-    --rx: #2e7d32;            /* Pharmacy – green */
-    --rx-soft: #e8f5e9;
-    --blue: #08613f;        /* brand green */
-    --blue-soft: #eaf4e8;
-    --blue-line: #cfe5d3;
-    --serif: "DM Serif Display", Georgia, serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-  body { font-family: "DM Sans", system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
-  h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.1; }
-  h1 .g, h2 .g { color: var(--primary); }
-  .wrap { max-width: 1184px; margin: 0 auto; padding: 0 24px; }
-  .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-  .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); }
-  .eyebrow::before { content: ""; width: 26px; height: 1.5px; background: currentColor; }
-  section { padding: 56px 0; }
-  .h2 { font-size: clamp(34px, 4.4vw, 48px); margin: 14px 0 20px; }
-  .lead { color: var(--muted); font-size: 17px; }
-  .ibox { width: 40px; height: 40px; border-radius: 10px; background: var(--soft); color: var(--primary); display: grid; place-items: center; flex-shrink: 0; }
-
-  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap; border: 1px solid transparent; cursor: pointer; font-family: inherit; transition: background .15s, box-shadow .15s; }
-  .btn-primary { background: var(--primary); color: #fff; }
-  .btn-primary:hover { background: var(--primary-dark); }
-  .btn-book { background: var(--book); color: #fff; }
-  .btn-book:hover { background: var(--book-dark); }
-  .btn-light { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-  .btn-light:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-  .btn-sm { padding: 9px 16px; font-size: 14px; }
-
-  /* Header */
-  header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
-  .logo { display: flex; align-items: center; gap: 12px; }
-  .logo .ibox { width: 44px; height: 44px; }
-  .logo b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.1; white-space: nowrap; }
-  .logo small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 2px; color: var(--muted); white-space: nowrap; }
-  nav { display: flex; gap: 32px; color: var(--muted); font-weight: 500; }
-  nav a:hover { color: var(--primary); }
-  @media (max-width: 960px) { nav { display: none; } }
-  @media (max-width: 560px) {
-    .wrap { padding: 0 16px; }
-    .logo .ibox { width: 38px; height: 38px; }
-    .logo b { font-size: 18px; }
-    .logo small { font-size: 9px; letter-spacing: 1.2px; }
-    header .btn .long { display: none; }
-    header .btn { padding: 10px 14px; gap: 6px; }
-    section { padding: 40px 0; }
-    section.hero { padding: 28px 0 36px; }
-  }
-
-  @media (max-width: 400px) {
-    header .wrap { gap: 10px; }
-    header .btn .icon { display: none; }
-    .logo { gap: 9px; }
-    .logo .ibox { width: 34px; height: 34px; }
-    .logo b { font-size: 16.5px; }
-    .logo small { font-size: 8px; letter-spacing: .6px; }
-  }
-
-  /* Hero */
-  .hero { padding: 48px 0 44px; }
-  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 40px; font-size: 13px; font-weight: 600; color: var(--muted); }
-  .pill .icon { width: 15px; height: 15px; color: var(--primary); }
-  .hero h1 { font-size: clamp(48px, 7vw, 90px); margin: 22px 0 18px; }
-  .tagline { font-size: 19px; font-weight: 500; margin-bottom: 14px; }
-  .hero .lead { max-width: 480px; margin-bottom: 30px; }
-  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .trust { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); font-weight: 500; }
-  .trust span { display: flex; align-items: center; gap: 8px; }
-  .trust .icon { color: var(--primary); }
-  .hero-media { position: relative; }
-  .hero-media img { width: 100%; aspect-ratio: 1 / 1.02; object-fit: cover; border-radius: 10px; }
-  .float { position: absolute; left: -36px; bottom: 34px; display: flex; align-items: center; gap: 14px; background: #fff; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(30,42,35,.12); }
-  .float .ibox { border-radius: 50%; }
-  .float b { display: block; font-size: 15px; font-weight: 600; }
-  .float span { font-size: 13px; color: var(--muted); }
-  .caption { text-align: right; font-size: 13px; color: var(--muted); margin-top: 14px; }
-  @media (max-width: 860px) {
-    .hero .wrap { grid-template-columns: minmax(0, 1fr); }
-    .float { left: 12px; bottom: 12px; }
-  }
-
-  /* Strip */
-  .strip { background: var(--blue-soft); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
-  .strip .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 28px; padding-top: 20px; padding-bottom: 20px; font-weight: 500; }
-  .strip span { display: flex; align-items: center; gap: 10px; }
-  .strip .icon { color: var(--blue); }
-  .features .ibox, .ci .ibox { background: var(--blue-soft); color: var(--blue); }
-
-  /* About */
-  .about .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
-  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-  .feature { display: flex; gap: 14px; padding: 26px 0; border-top: 1px solid var(--line); }
-  .feature b { display: block; font-weight: 600; margin-bottom: 6px; }
-  .feature p { color: var(--muted); font-size: 15px; }
-  @media (max-width: 860px) { .about .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
-  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
-
-  /* Doctors */
-  .doctors { background: var(--blue-soft); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
-  .split-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
-  .split-head .h2 { max-width: 680px; margin-bottom: 0; }
-  .split-head p { max-width: 340px; color: var(--muted); }
-  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 24px; }
-  .doc { display: grid; grid-template-columns: 40% 1fr; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .doc-photo { position: relative; background: var(--soft); }
-  .doc.ent .doc-photo { background: var(--ent-soft); }
-  .doc-photo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; object-position: center top; }
-  .tag { position: absolute; left: 12px; bottom: 12px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-  .doc-body { padding: 30px 28px; }
-  .role { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); }
-  .doc.ent .role { color: var(--ent); }
-  .doc h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 10px 0 6px; }
-  .deg { color: var(--muted); font-size: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
-  .doc p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
-  @media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo img { height: 300px; } }
-
-  /* Services */
-  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px; margin-top: 28px; }
-  .svc { display: flex; flex-direction: column; }
-  .svc ul { flex: 1; }
-  .svc .btn { align-self: flex-start; }
-  .svc.rx .svc-head { background: var(--rx-soft); }
-  .svc.rx .svc-head small, .svc.rx h3, .svc.rx .svc-head .ibox, .svc.rx li .icon { color: var(--rx); }
-  .btn-rx { background: #fff; color: var(--rx); border-color: #c3e0c5; }
-  .doc.psy .doc-photo, .svc.psy .svc-head { background: var(--psy-soft); }
-  .doc.psy .role, .svc.psy .svc-head small, .svc.psy h3, .svc.psy .svc-head .ibox, .svc.psy li .icon { color: var(--psy); }
-  .btn-psy { background: #fff; color: var(--psy); border-color: #c5dfcc; }
-  .btn-psy:hover { background: var(--psy-soft); }
-  .btn-rx:hover { background: var(--rx-soft); }
-  .svc { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .svc-head { display: flex; justify-content: space-between; align-items: flex-start; padding: 26px 28px; background: var(--soft); }
-  .svc.ent .svc-head { background: var(--ent-soft); }
-  .svc-head small { font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--primary); }
-  .svc.ent .svc-head small, .svc.ent h3 { color: var(--ent); }
-  .svc h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; color: var(--primary); line-height: 1.2; margin-top: 4px; }
-  .svc-head .ibox { background: #fff; border: 1px solid var(--line); }
-  .svc.ent .svc-head .ibox { color: var(--ent); }
-  .svc ul { list-style: none; padding: 10px 28px 0; }
-  .svc li { display: flex; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
-  .svc li:last-child { border-bottom: 0; }
-  .svc li .icon { color: var(--primary); width: 16px; height: 16px; }
-  .svc.ent li .icon { color: var(--ent); }
-  .svc .btn { margin: 8px 28px 28px; }
-  .btn-ent { background: #fff; color: var(--ent); border-color: #b8dcd6; }
-  .btn-ent:hover { background: var(--ent-soft); }
-
-  /* Why */
-  .why { background: linear-gradient(135deg, #eaf4e8, #d9ecd8); border-top: 1px solid var(--blue-line); border-bottom: 1px solid var(--blue-line); }
-  .why .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
-  .why .eyebrow { color: var(--blue); }
-  .why h2 .g { color: var(--blue); }
-  .why p { color: var(--muted); }
-  .why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-  .why-list span { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--blue-line); font-weight: 500; }
-  .why-list .icon { color: var(--blue); }
-  @media (max-width: 860px) { .why .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
-  @media (max-width: 560px) { .why-list { grid-template-columns: 1fr; } }
-
-  /* Enquiry */
-  .enquiry { background: var(--cream); border-bottom: 1px solid var(--line); }
-  .enquiry .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; }
-  .enquiry .left { padding-right: 56px; border-right: 1px solid var(--line); }
-  .enquiry .right { padding-left: 56px; }
-  .contact-items { margin: 30px 0 24px; padding-top: 30px; border-top: 1px solid var(--line); display: grid; gap: 18px; }
-  .ci { display: flex; align-items: center; gap: 14px; }
-  .ci .ibox { width: 44px; height: 44px; }
-  .ci small { display: block; color: var(--muted); font-size: 13px; }
-  .ci b { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
-  form h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; }
-  form > p { color: var(--muted); margin: 4px 0 20px; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 18px; }
-  label span { font-weight: 400; color: var(--muted); }
-  input, select, textarea { display: block; width: 100%; margin-top: 7px; padding: 12px 14px; font: inherit; font-size: 15px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-  input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
-  textarea { min-height: 110px; resize: vertical; }
-  .submit-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-  .submit-row small { color: var(--muted); max-width: 270px; }
-  @media (max-width: 860px) {
-    .enquiry .wrap { grid-template-columns: minmax(0, 1fr); }
-    .enquiry .left { padding: 0 0 40px; border-right: 0; border-bottom: 1px solid var(--line); }
-    .enquiry .right { padding: 40px 0 0; }
-  }
-  @media (max-width: 560px) { .row { grid-template-columns: 1fr; gap: 0; } }
-
-  /* Visit */
-  .visit-top { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; }
-  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
-  .vi { display: flex; gap: 12px; }
-  .vi .icon { color: var(--primary); margin-top: 3px; }
-  .vi b { display: block; font-weight: 600; }
-  .vi p { color: var(--muted); font-size: 14.5px; }
-  .vi a.more { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; color: var(--primary); font-weight: 600; font-size: 14px; }
-  .visit-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); }
-  .visit-bottom > a:first-child { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--primary); }
-  @media (max-width: 860px) { .visit-top { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
-  @media (max-width: 560px) { .visit-grid { grid-template-columns: 1fr; } }
-
-  /* Footer */
-  footer { background: var(--primary); color: #fff; padding: 48px 0 28px; }
-  .f-top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.18); }
-  footer .logo .ibox { background: rgba(255,255,255,.12); color: #fff; }
-  footer .logo small { color: #cfe6d9; }
-  footer p { color: #d7e9de; max-width: 360px; margin-top: 14px; font-size: 15px; }
-  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; color: #e6f2eb; font-size: 15px; }
-  .f-nav a:hover { color: #fff; text-decoration: underline; }
-  .f-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 22px; font-size: 13.5px; color: #cfe6d9; }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -272,9 +44,11 @@
       <a href="#about">About</a>
       <a href="#doctors">Our doctors</a>
       <a href="#services">Services</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="awareness.html">Health info</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
+    <a href="book.html" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
   </div>
 </header>
 
@@ -286,7 +60,7 @@
       <p class="tagline">Compassionate Care. Expert Doctors. Better Living.</p>
       <p class="lead">Thoughtful outpatient care for mental well-being and ear, nose and throat health, with experienced specialist doctors in one welcoming clinic.</p>
       <div class="actions">
-        <a href="#contact" class="btn btn-book"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
+        <a href="book.html" class="btn btn-book"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
         <a href="#services" class="btn btn-light">Explore services<svg class="icon"><use href="#i-down"/></svg></a>
       </div>
       <div class="trust">
@@ -347,7 +121,7 @@
           <h3>Dr. Tetali Rama Reddy</h3>
           <div class="deg">MBBS, MD (Psychiatry), D.C.P.</div>
           <p>Founder of the clinic. Specialist outpatient care for mental health and personal well-being.</p>
-          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Request a consultation<svg class="icon"><use href="#i-right"/></svg></a>
+          <a href="book.html?doctor=psy" class="btn btn-light btn-sm">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
       <div class="doc ent">
@@ -360,10 +134,24 @@
           <h3>Dr. Bobba Rachana</h3>
           <div class="deg">MBBS, MS (ENT)</div>
           <p>Specialist outpatient care for ear, nose, throat and head and neck health.</p>
-          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Request a consultation<svg class="icon"><use href="#i-right"/></svg></a>
+          <a href="book.html?doctor=ent" class="btn btn-light btn-sm">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="eyebrow">Patient testimonials</div>
+    <h2 class="h2">Kind words from <span class="g">our patients.</span></h2>
+    <p class="lead">What patients say about their care at Dr. Rama Reddy Clinics.</p>
+  </div>
+  <div class="t-viewport" aria-label="Patient testimonials">
+    <div class="t-track"></div>
+  </div>
+  <div class="wrap t-more">
+    <a href="testimonials.html" class="btn btn-light">View all testimonials &amp; patient videos<svg class="icon"><use href="#i-right"/></svg></a>
   </div>
 </section>
 
@@ -493,7 +281,7 @@
       </div>
     </div>
     <div class="visit-bottom">
-      <a href="https:// https://trr-clinic.pages.dev"><svg class="icon"><use href="#i-globe"/></svg> https://trr-clinic.pages.dev<svg class="icon"><use href="#i-right"/></svg></a>
+      <a href="https://trr-clinic.pages.dev"><svg class="icon"><use href="#i-globe"/></svg>trr-clinic.pages.dev<svg class="icon"><use href="#i-right"/></svg></a>
       <a href="tel:+919177256111" class="btn btn-light btn-sm"><svg class="icon"><use href="#i-phone"/></svg>Call to arrange a visit</a>
     </div>
   </div>
@@ -513,6 +301,8 @@
         <a href="#about">About</a>
         <a href="#doctors">Our doctors</a>
         <a href="#services">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="awareness.html">Health info</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -523,6 +313,7 @@
   </div>
 </footer>
 
+<script src="testimonials.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
