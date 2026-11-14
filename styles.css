@@ -153,7 +153,9 @@ nav a:hover { color: var(--primary); }
 .doc { display: grid; grid-template-columns: 40% 1fr; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .doc-photo { position: relative; background: var(--soft); }
 .doc.ent .doc-photo { background: var(--ent-soft); }
-.doc-photo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; object-position: center top; }
+/* photo fills its box; the box (not the photo's own shape) sets the size, so both doctor cards match */
+.doc-photo { min-height: 280px; }
+.doc-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .tag { position: absolute; left: 12px; bottom: 12px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .doc-body { padding: 30px 28px; }
 .role { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); }
@@ -161,7 +163,8 @@ nav a:hover { color: var(--primary); }
 .doc h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 10px 0 6px; }
 .deg { color: var(--muted); font-size: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
 .doc p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
-@media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo img { height: 300px; } }
+/* phones: portrait photo box (like the photos themselves) so faces aren't zoomed or cut */
+@media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo { min-height: 0; aspect-ratio: 4 / 5; } }
 
 /* Testimonials – auto-scrolling row; pauses on hover/touch */
 .testimonials { border-bottom: 1px solid var(--line); overflow: hidden; }
