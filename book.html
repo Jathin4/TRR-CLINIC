@@ -64,6 +64,7 @@
           </select>
         </label>
         <label>Referred by <span>(optional)</span><input name="ref_name" autocomplete="off" placeholder="Doctor / person who referred you"></label>
+        <label>Patient concerns <span>(optional)</span><textarea name="concerns" maxlength="500" placeholder="Briefly describe your symptoms or what you'd like to discuss"></textarea></label>
         <div class="fee">
           <span>Consultation fee</span>
           <b id="fee">₹ —</b>
@@ -147,12 +148,15 @@
     const d = DOCTORS[f.doctor.value];
     const refName = f.ref_name.value.trim();
     const referral = refName ? ['Referred by: ' + refName] : [];
+    const concerns = f.concerns.value.trim();
+    const concernLine = concerns ? ['Concerns: ' + concerns] : [];
     const text = [
       'New appointment booking – Dr. Rama Reddy Clinics',
       'Name: ' + f.name.value.trim(),
       'Phone: ' + f.phone.value.trim(),
       'Doctor: ' + d.name,
       ...referral,
+      ...concernLine,
       'Consultation fee: ₹' + d.fee,
       'Transaction ID (UTR): ' + f.txn.value.trim(),
     ].join('\n');
