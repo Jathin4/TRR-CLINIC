@@ -31,25 +31,29 @@
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-ear" viewBox="0 0 24 24"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 11h18M7 17v3M17 17v3"/><circle cx="7.5" cy="14" r=".5"/><circle cx="16.5" cy="14" r=".5"/></symbol>
   <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
 </svg>
 
 <header>
+  <div class="notice"><div class="notice-in"><svg class="icon"><use href="#i-phone"/></svg><span><b>Please call and confirm before you visit</b> · <a href="tel:+919177256111">91772 56111</a></span><button class="notice-close" type="button" aria-label="Close notice" onclick="this.closest('.notice').remove()">×</button></div></div>
   <div class="wrap">
     <a href="#" class="logo" aria-label="Dr. Rama Reddy Clinics home">
       <span class="ibox"><svg class="icon"><use href="#i-brain"/></svg></span>
       <span><b>Dr. Rama Reddy Clinics</b><small>SPECIALIST OUTPATIENT CLINIC</small></span>
     </a>
-    <nav onclick="document.body.classList.remove('menu-open')">
-      <a href="#about">About</a>
+    <nav>
       <a href="#doctors">Our doctors</a>
       <a href="#services">Services</a>
+      <a href="psychiatry.html">Psychiatry</a>
+      <a href="ent.html">ENT</a>
       <a href="testimonials.html">Testimonials</a>
-      <a href="awareness.html">Health info</a>
+      <a href="gallery.html">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="book.html" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
-    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.body.classList.toggle('menu-open'))"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <a href="#contact" class="btn btn-book" aria-label="Book appointment"><span>Book<span class="long"> appointment</span></span><svg class="icon"><use href="#i-right"/></svg></a>
   </div>
 </header>
 
@@ -62,7 +66,7 @@
       <p class="tagline">Compassionate Care. Expert Doctors. Better Living.</p>
       <p class="lead">Thoughtful outpatient care for mental well-being and ear, nose and throat health, with experienced specialist doctors in one welcoming clinic.</p>
       <div class="actions">
-        <a href="book.html" class="btn btn-book"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
+        <a href="#contact" class="btn btn-book"><svg class="icon"><use href="#i-cal"/></svg>Book an appointment</a>
         <a href="#services" class="btn btn-light">Explore services<svg class="icon"><use href="#i-down"/></svg></a>
       </div>
       <div class="trust">
@@ -123,7 +127,7 @@
           <h3>Dr. Tetali Rama Reddy</h3>
           <div class="deg">MBBS, MD (Psychiatry), D.C.P.</div>
           <p>Founder of the clinic. Specialist outpatient care for mental health and personal well-being.</p>
-          <a href="book.html?doctor=psy" class="btn btn-light btn-sm">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
+          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
       <div class="doc ent">
@@ -136,7 +140,7 @@
           <h3>Dr. Bobba Rachana</h3>
           <div class="deg">MBBS, MS (ENT)</div>
           <p>Specialist outpatient care for ear, nose, throat and head and neck health.</p>
-          <a href="book.html?doctor=ent" class="btn btn-light btn-sm">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
+          <a href="#contact" class="btn btn-light btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Book a consultation<svg class="icon"><use href="#i-right"/></svg></a>
         </div>
       </div>
     </div>
@@ -175,7 +179,7 @@
           <li><svg class="icon"><use href="#i-check"/></svg>De-addiction</li>
           <li><svg class="icon"><use href="#i-check"/></svg>Follow-up &amp; Continuity Care</li>
         </ul>
-        <a href="#contact" class="btn btn-psy btn-sm" data-doctor="Dr. Tetali Rama Reddy (Psychiatry)">Ask about psychiatry<svg class="icon"><use href="#i-right"/></svg></a>
+        <div class="svc-actions"><a href="psychiatry.html" class="btn btn-psy btn-sm">Ask about psychiatry<svg class="icon"><use href="#i-right"/></svg></a><button type="button" class="clock-btn" data-timepop="psy" data-title="Psychiatry timings" aria-label="Psychiatry timings" title="Psychiatry timings"><svg class="icon"><use href="#i-clock"/></svg></button></div>
       </div>
       <div class="svc ent">
         <div class="svc-head">
@@ -188,7 +192,7 @@
           <li><svg class="icon"><use href="#i-check"/></svg>Throat &amp; Voice Evaluation</li>
           <li><svg class="icon"><use href="#i-check"/></svg>Diagnostic Laryngoscopy</li>
         </ul>
-        <a href="#contact" class="btn btn-ent btn-sm" data-doctor="Dr. Bobba Rachana (ENT)">Ask about ENT care<svg class="icon"><use href="#i-right"/></svg></a>
+        <div class="svc-actions"><a href="ent.html" class="btn btn-ent btn-sm">Ask about ENT care<svg class="icon"><use href="#i-right"/></svg></a><button type="button" class="clock-btn" data-timepop="ent" data-title="ENT timings" aria-label="ENT timings" title="ENT timings"><svg class="icon"><use href="#i-clock"/></svg></button></div>
       </div>
       <div class="svc rx">
         <div class="svc-head">
@@ -201,7 +205,7 @@
           <li><svg class="icon"><use href="#i-check"/></svg>Medication Guidance</li>
           <li><svg class="icon"><use href="#i-check"/></svg>Refills for Ongoing Treatment</li>
         </ul>
-        <a href="#contact" class="btn btn-rx btn-sm" data-doctor="Pharmacy enquiry">Ask about pharmacy<svg class="icon"><use href="#i-right"/></svg></a>
+        <div class="svc-actions"><button type="button" class="btn btn-rx btn-sm" data-open="pharmacy-pop">Ask about pharmacy<svg class="icon"><use href="#i-right"/></svg></button></div>
       </div>
     </div>
   </div>
@@ -277,9 +281,14 @@
         <p class="lead">Serving patients in Anaparthi and the surrounding community.</p>
       </div>
       <div class="visit-grid">
-        <div class="vi"><svg class="icon"><use href="#i-pin"/></svg><div><b>Clinic location</b><p>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence, Narayya Well Street, Anaparthi</p><a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=16.929583,81.957667" target="_blank" rel="noopener">Open in Maps<svg class="icon"><use href="#i-right"/></svg></a></div></div>
-        <div class="vi"><svg class="icon"><use href="#i-phone"/></svg><div><b>Telephone</b><p><a href="tel:+919177256111">+91 91772 56111</a><br>Prior appointment is necessary.</p></div></div>
+        <div class="vi vi-wide"><svg class="icon"><use href="#i-pin"/></svg><div><b>Clinic location</b><p>D. No: 8-48, Opposite the Late Sri Tetali Rama Reddy Residence, Narayya Well Street, Anaparthi</p>
+          <div class="more-row">
+            <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=16.929583,81.957667" target="_blank" rel="noopener">Open in Maps<svg class="icon"><use href="#i-right"/></svg></a>
+            <button type="button" class="more" data-open="reach-pop">How to reach here<svg class="icon"><use href="#i-right"/></svg></button>
+          </div>
+        </div></div>
         <div class="vi"><svg class="icon"><use href="#i-chat"/></svg><div><b>WhatsApp</b><p><a href="https://wa.me/919177256111" target="_blank" rel="noopener">Message the clinic</a></p></div></div>
+        <div class="vi"><svg class="icon"><use href="#i-phone"/></svg><div><b>Telephone</b><p><a href="tel:+919177256111">+91 91772 56111</a><br>Prior appointment is necessary.</p></div></div>
       </div>
     </div>
     <div class="visit-bottom">
@@ -300,11 +309,12 @@
         <p>Specialist outpatient care in psychiatry and ENT, in Anaparthi, Andhra Pradesh.</p>
       </div>
       <div class="f-nav">
-        <a href="#about">About</a>
         <a href="#doctors">Our doctors</a>
         <a href="#services">Services</a>
+        <a href="psychiatry.html">Psychiatry</a>
+        <a href="ent.html">ENT</a>
         <a href="testimonials.html">Testimonials</a>
-        <a href="awareness.html">Health info</a>
+        <a href="gallery.html">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -315,12 +325,48 @@
   </div>
 </footer>
 
-<script src="testimonials.js"></script>
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+<!-- Timings popup (clock buttons on the service cards) -->
+<dialog id="timing-pop" class="pop">
+  <div class="pop-in">
+    <div class="pop-head"><span class="ibox"><svg class="icon"><use href="#i-clock"/></svg></span><h3>Timings</h3><button class="pop-x" type="button" data-close aria-label="Close">×</button></div>
+    <div class="time-big"><svg class="icon"><use href="#i-clock"/></svg><span></span></div>
+    <p>Prior appointment is necessary. Please call to confirm before you visit.</p>
+    <a href="tel:+919177256111" class="btn btn-book btn-wide"><svg class="icon"><use href="#i-phone"/></svg>Call 91772 56111</a>
+  </div>
+</dialog>
 
+<!-- Pharmacy timings popup --><dialog id="pharmacy-pop" class="pop">
+  <div class="pop-in">
+    <div class="pop-head"><span class="ibox"><svg class="icon"><use href="#i-pill"/></svg></span><h3>Pharmacy timings</h3><button class="pop-x" type="button" data-close aria-label="Close">×</button></div>
+    <div class="time-big"><svg class="icon"><use href="#i-clock"/></svg><span data-timing="rx"></span></div>
+    <p>Prescription medicines are dispensed at our in-clinic pharmacy. Please bring your prescription.</p>
+    <a href="tel:+919177256111" class="btn btn-book btn-wide"><svg class="icon"><use href="#i-phone"/></svg>Call 91772 56111</a>
+  </div>
+</dialog>
+
+<!-- How to reach popup -->
+<dialog id="reach-pop" class="pop">
+  <form id="reach-form" class="pop-in">
+    <div class="pop-head"><span class="ibox"><svg class="icon"><use href="#i-pin"/></svg></span><h3>How to reach us</h3><button class="pop-x" type="button" data-close aria-label="Close">×</button></div>
+    <label>From<input name="from" autocomplete="address-level2" placeholder="Your town or city"></label>
+    <label>To<input value="Dr. Rama Reddy Clinics, Narayya Well Street, Anaparthi" readonly></label>
+    <p>Travel by:</p>
+    <div class="travel">
+      <a class="btn btn-light" href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noopener"><svg class="icon"><use href="#i-train"/></svg>Train (IRCTC)</a>
+      <a class="btn btn-light" href="https://www.apsrtconline.in/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-bus"/></svg>Bus (APSRTC)</a>
+    </div>
+    <button class="btn btn-book btn-wide" type="submit"><svg class="icon"><use href="#i-pin"/></svg>Get directions on Google Maps</button>
+  </form>
+</dialog>
+
+<script src="testimonials.js"></script>
+<script src="site.js"></script>
+<script>
   const form = document.getElementById('enquiry');
-  // "Request a consultation" / "Ask about…" buttons preselect the doctor
+  // Links like index.html?doctor=ent#contact (from the Psychiatry / ENT pages) preselect the doctor
+  const pre = { psy: 'Dr. Tetali Rama Reddy (Psychiatry)', ent: 'Dr. Bobba Rachana (ENT)' }[new URLSearchParams(location.search).get('doctor')];
+  if (pre) form.doctor.value = pre;
+  // "Book a consultation" buttons preselect the doctor
   document.querySelectorAll('[data-doctor]').forEach(a =>
     a.addEventListener('click', () => { form.doctor.value = a.dataset.doctor; }));
 
