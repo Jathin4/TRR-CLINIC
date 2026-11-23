@@ -23,7 +23,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 125px; }   /* sticky header height, so #links aren't hidden under it */
-@media (max-width: 1240px) { html { scroll-padding-top: 160px; } }
+@media (max-width: 1320px) { html { scroll-padding-top: 160px; } }
 body { font-family: "DM Sans", system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
 img { max-width: 100%; display: block; }
 [hidden] { display: none !important; }
@@ -60,13 +60,13 @@ nav a { white-space: nowrap; }
 .logo small { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 2px; color: var(--muted); white-space: nowrap; }
 nav { display: flex; gap: 32px; margin: 0 auto; color: var(--muted); font-weight: 500; }
 nav a:hover { color: var(--primary); }
-@media (max-width: 1320px) { nav { gap: 22px; } header .wrap { padding: 0 24px; } }
+@media (max-width: 1440px) { nav { gap: 20px; } header .wrap { padding: 0 24px; } }
 /* the logo may shrink (never the buttons), so the header can't overflow */
 .logo, .logo > span:last-child { min-width: 0; }
 .logo b, .logo small { overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 640px) { header .btn .long { display: none; } }
 /* Phone / tablet: same menu row as desktop, moved under the logo; swipe sideways to see all links */
-@media (max-width: 1240px) {
+@media (max-width: 1320px) {
   header .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; row-gap: 2px; }
   header .wrap > .btn { margin-left: auto; }
   nav { order: 3; flex-basis: 100%; margin: 0 -24px; padding: 6px 24px 10px; gap: 24px; overflow-x: auto; scrollbar-width: none;
@@ -148,13 +148,13 @@ nav a:hover { color: var(--primary); }
 .split-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
 .split-head .h2 { max-width: 680px; margin-bottom: 0; }
 .split-head p { max-width: 340px; color: var(--muted); }
-.doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 24px; }
-.doc { display: grid; grid-template-columns: 40% 1fr; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.doc-photo { position: relative; background: var(--soft); }
-.doc.ent .doc-photo { background: var(--ent-soft); }
-/* photo fills its box; the box (not the photo's own shape) sets the size, so both doctor cards match */
-.doc-photo { min-height: 280px; }
-.doc-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(540px, 100%), 1fr)); gap: 24px; }
+/* Photo column = 240px (Dr. Rachana's photo width): both photos show at the same size, never enlarged,
+   and the column ends where the photo ends — no empty bands around it */
+.doc { display: grid; grid-template-columns: 262px 1fr; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.doc-photo { position: relative; padding: 22px 0 22px 22px; }
+.doc-photo img { display: block; width: 240px; height: auto; border-radius: 10px; }
+.doc-photo .tag { left: 32px; bottom: 32px; }
 .tag { position: absolute; left: 12px; bottom: 12px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .doc-body { padding: 30px 28px; }
 .role { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); }
@@ -163,7 +163,13 @@ nav a:hover { color: var(--primary); }
 .deg { color: var(--muted); font-size: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
 .doc p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
 /* phones: portrait photo box (like the photos themselves) so faces aren't zoomed or cut */
-@media (max-width: 560px) { .doc { grid-template-columns: 1fr; } .doc-photo { min-height: 0; aspect-ratio: 4 / 5; } }
+/* phones: the box is exactly as tall as the photo (shown at real size, never enlarged), centred */
+@media (max-width: 560px) {
+  .doc { grid-template-columns: 1fr; }
+  .doc-photo { min-height: 0; width: fit-content; max-width: 100%; margin: 0 auto; padding: 0; }
+  .doc-photo img { width: auto; max-width: 100%; border-radius: 0; }
+  .doc-photo .tag { left: 12px; bottom: 12px; }
+}
 
 /* Testimonials – auto-scrolling row; pauses on hover/touch */
 .testimonials { border-bottom: 1px solid var(--line); overflow: hidden; }
@@ -296,6 +302,43 @@ nav a:hover { color: var(--primary); }
 .faq details p { padding: 0 20px 16px; color: var(--muted); }
 .disclaimer { margin: 22px auto 0; max-width: 620px; font-size: 13px; color: var(--muted); }
 
+/* About: "since 2021" badge */
+.since { display: inline-flex; align-items: center; gap: 14px; margin-top: 22px; padding: 12px 20px; border-radius: 12px; background: var(--soft); border: 1px solid var(--blue-line); }
+.since b { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1; color: var(--primary); }
+.since span { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+
+/* Doctor credentials (home cards) */
+/* credentials + button run full width under the photo and name, in two columns */
+.doc-foot { grid-column: 1 / -1; margin: 0 22px; padding: 18px 0 24px; border-top: 1px solid var(--line); }
+.doc-body p:last-child { margin-bottom: 0; }
+.creds { list-style: none; margin: 0 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; font-size: 14px; color: var(--muted); }
+@media (max-width: 560px) { .creds { grid-template-columns: 1fr; } .doc-foot { margin: 0 28px; } }
+.creds li { position: relative; padding-left: 16px; }
+.creds li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+.creds b { color: var(--ink); font-weight: 600; }
+
+/* Doctor profile (Psychiatry / ENT pages) */
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 22px; }
+.profile-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+.profile-card h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; color: var(--primary); margin-bottom: 8px; }
+.dept-ent .profile-card h3 { color: var(--ent); }
+.profile-card ul + h3 { margin-top: 18px; }
+.profile-card ul { list-style: none; display: grid; gap: 12px; }
+.profile-card li b { display: block; font-weight: 600; }
+.profile-card li span { color: var(--muted); font-size: 14.5px; }
+@media (max-width: 760px) { .profile-grid { grid-template-columns: 1fr; } }
+
+/* Patient feedback section (posts to Google Forms) */
+.feedback { border-top: 1px solid var(--line); }
+.feedback .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+.fb-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px; box-shadow: 0 10px 30px rgba(30,42,35,.06); }
+.fb-card textarea { min-height: 120px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.fb-msg { margin-bottom: 14px; padding: 10px 14px; border-radius: 8px; font-weight: 600; }
+.fb-msg.ok { background: var(--soft); color: var(--primary); border: 1px solid var(--blue-line); }
+.fb-msg.bad { background: #fef3f2; color: #b42318; border: 1px solid #fecdca; }
+@media (max-width: 860px) { .feedback .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+
 /* Sticky "call and confirm" notice (inside the sticky header) */
 .notice { background: var(--primary); color: #fff; font-size: 14px; }
 .notice-in { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 7px 44px; position: relative; text-align: center; }
@@ -396,7 +439,7 @@ dialog.lightbox p { color: #fff; text-align: center; margin-top: 10px; }
 .svc.rx .svc-head { background: var(--rx-soft); }
 .svc.rx .svc-head small, .svc.rx h3, .svc.rx .svc-head .ibox, .svc.rx li .icon { color: var(--rx); }
 .btn-rx { background: #fff; color: var(--rx); border-color: #c3e0c5; }
-.doc.psy .doc-photo, .svc.psy .svc-head { background: var(--psy-soft); }
+.svc.psy .svc-head { background: var(--psy-soft); }
 .doc.psy .role, .svc.psy .svc-head small, .svc.psy h3, .svc.psy .svc-head .ibox, .svc.psy li .icon { color: var(--psy); }
 .btn-psy { background: #fff; color: var(--psy); border-color: #c5dfcc; }
 .btn-psy:hover { background: var(--psy-soft); }
