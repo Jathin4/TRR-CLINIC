@@ -210,7 +210,7 @@ nav a:hover { color: var(--primary); }
 .v-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 28px; }
 .v-card { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
 .v-frame { position: relative; aspect-ratio: 9 / 16; background: #0f1a14; }
-.v-frame img, .v-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.v-frame img, .v-frame iframe, .v-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
 .v-play { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(transparent 55%, rgba(0,0,0,.55)); border: 0; cursor: pointer; color: #fff; }
 .v-play span { width: 62px; height: 62px; border-radius: 50%; background: rgba(255,255,255,.92); display: grid; place-items: center; color: var(--primary); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
 .v-play .icon { width: 26px; height: 26px; fill: currentColor; margin-left: 3px; }
@@ -423,6 +423,8 @@ dialog.lightbox p { color: #fff; text-align: center; margin-top: 10px; }
 .tpage .h2 { margin: 10px 0 12px; }
 .tpage .back { margin-bottom: 12px; }
 .tpage .v-grid, .tpage .t-grid { margin-top: 20px; }
+.aw-videos .v-frame video { object-fit: contain; background: #f3f8f5; }
+.aw-videos .v-body small { display: block; }
 .tpage .testimonials { border-bottom: 0; padding-top: 8px; }
 .tpage .cta-band { border-top: 1px solid var(--line); }
 @media (max-width: 560px) {
