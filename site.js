@@ -10,9 +10,9 @@ const TIMINGS = {
 // ── FEEDBACK → Google Form (responses collect in the linked Google Sheet → download as Excel).
 // Fill these from your form's pre-filled link (see setup steps). Until set, the form shows a notice.
 const FEEDBACK_FORM = {
-  action:  "",   // e.g. "https://docs.google.com/forms/d/e/1FAIpQLS.../formResponse"
-  name:    "",   // e.g. "entry.123456789"   (the "Patient name" question)
-  message: "",   // e.g. "entry.987654321"   (the "Feedback" question)
+  action:  "https://docs.google.com/forms/d/e/1FAIpQLSdNuJeKtFQhDlNvTTlp90Ftio9X8hNAfFqQfZqb1f2YYWUudg/formResponse",
+  name:    "entry.1747349592",   // "Patient name" question
+  message: "entry.2112830266",   // "Review" question
 };
 const CLINIC_PHONE = "91772 56111";
 const CLINIC_LATLNG = "16.929583,81.957667";
